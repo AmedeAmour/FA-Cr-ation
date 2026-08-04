@@ -10,14 +10,22 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as BoutiqueRouteImport } from './routes/boutique'
 import { Route as CollectionsRouteImport } from './routes/collections'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as NosBoutiquesRouteImport } from './routes/nos-boutiques'
 import { Route as PanierRouteImport } from './routes/panier'
 import { Route as ProduitSlugRouteImport } from './routes/produit.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BoutiqueRoute = BoutiqueRouteImport.update({
@@ -28,6 +36,16 @@ const BoutiqueRoute = BoutiqueRouteImport.update({
 const CollectionsRoute = CollectionsRouteImport.update({
   id: '/collections',
   path: '/collections',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NosBoutiquesRoute = NosBoutiquesRouteImport.update({
+  id: '/nos-boutiques',
+  path: '/nos-boutiques',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PanierRoute = PanierRouteImport.update({
@@ -43,44 +61,75 @@ const ProduitSlugRoute = ProduitSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
   '/boutique': typeof BoutiqueRoute
   '/collections': typeof CollectionsRoute
+  '/contact': typeof ContactRoute
+  '/nos-boutiques': typeof NosBoutiquesRoute
   '/panier': typeof PanierRoute
   '/produit/$slug': typeof ProduitSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
   '/boutique': typeof BoutiqueRoute
   '/collections': typeof CollectionsRoute
+  '/contact': typeof ContactRoute
+  '/nos-boutiques': typeof NosBoutiquesRoute
   '/panier': typeof PanierRoute
   '/produit/$slug': typeof ProduitSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
   '/boutique': typeof BoutiqueRoute
   '/collections': typeof CollectionsRoute
+  '/contact': typeof ContactRoute
+  '/nos-boutiques': typeof NosBoutiquesRoute
   '/panier': typeof PanierRoute
   '/produit/$slug': typeof ProduitSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/boutique' | '/collections' | '/panier' | '/produit/$slug'
+  fullPaths:
+    | '/'
+    | '/a-propos'
+    | '/boutique'
+    | '/collections'
+    | '/contact'
+    | '/nos-boutiques'
+    | '/panier'
+    | '/produit/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/boutique' | '/collections' | '/panier' | '/produit/$slug'
+  to:
+    | '/'
+    | '/a-propos'
+    | '/boutique'
+    | '/collections'
+    | '/contact'
+    | '/nos-boutiques'
+    | '/panier'
+    | '/produit/$slug'
   id:
     | '__root__'
     | '/'
+    | '/a-propos'
     | '/boutique'
     | '/collections'
+    | '/contact'
+    | '/nos-boutiques'
     | '/panier'
     | '/produit/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AProposRoute: typeof AProposRoute
   BoutiqueRoute: typeof BoutiqueRoute
   CollectionsRoute: typeof CollectionsRoute
+  ContactRoute: typeof ContactRoute
+  NosBoutiquesRoute: typeof NosBoutiquesRoute
   PanierRoute: typeof PanierRoute
   ProduitSlugRoute: typeof ProduitSlugRoute
 }
@@ -92,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/a-propos': {
+      id: '/a-propos'
+      path: '/a-propos'
+      fullPath: '/a-propos'
+      preLoaderRoute: typeof AProposRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/boutique': {
@@ -106,6 +162,20 @@ declare module '@tanstack/react-router' {
       path: '/collections'
       fullPath: '/collections'
       preLoaderRoute: typeof CollectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nos-boutiques': {
+      id: '/nos-boutiques'
+      path: '/nos-boutiques'
+      fullPath: '/nos-boutiques'
+      preLoaderRoute: typeof NosBoutiquesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/panier': {
@@ -127,8 +197,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AProposRoute: AProposRoute,
   BoutiqueRoute: BoutiqueRoute,
   CollectionsRoute: CollectionsRoute,
+  ContactRoute: ContactRoute,
+  NosBoutiquesRoute: NosBoutiquesRoute,
   PanierRoute: PanierRoute,
   ProduitSlugRoute: ProduitSlugRoute,
 }
