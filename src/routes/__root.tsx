@@ -11,6 +11,11 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { CartProvider } from "../lib/cart";
+import { Header } from "../components/site/Header";
+import { Footer } from "../components/site/Footer";
+import { WhatsAppFab } from "../components/site/WhatsAppFab";
+import { Toaster } from "../components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -77,21 +82,53 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Maison Michèle Yakice — Pagne tissé, lin & batik de luxe" },
+      {
+        name: "description",
+        content:
+          "Maison de mode ivoirienne : vêtements de luxe en pagne tissé, lin et batik pour femme et homme. Boutique en ligne, Abidjan.",
+      },
+      { name: "author", content: "Maison Michèle Yakice" },
+      { property: "og:site_name", content: "Maison Michèle Yakice" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "fr_CI" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap",
+      },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ClothingStore",
+          name: "Maison Michèle Yakice",
+          slogan: "Le pagne tissé autrement – vous allez vous aimer.",
+          email: "micheleyakice28@gmail.com",
+          telephone: ["+2250758430221", "+2250758213810"],
+          url: "https://micheleyakice.com",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress:
+              "Star 11, voie del hôtel Belle côte, Angré 8ème Tranche, face programme 6",
+            addressLocality: "Cocody, Abidjan",
+            addressCountry: "CI",
+            postOfficeBoxNumber: "07 BP 227 Abidjan 07",
+          },
+          areaServed: "Côte d'Ivoire",
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -119,8 +156,18 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <CartProvider>
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <main className="flex-1">
+            {/* Required: nested routes render here. */}
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
+        <WhatsAppFab />
+        <Toaster position="top-center" />
+      </CartProvider>
     </QueryClientProvider>
   );
 }
