@@ -6,11 +6,14 @@ export function Footer() {
     <footer className="bg-primary text-primary-foreground mt-24">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 md:grid-cols-4 md:px-8">
         <div>
-          <p className="font-display text-xl tracking-[0.14em] uppercase">
-            Maison
-            <br />
-            Michèle Yakice
-          </p>
+          <div className="flex items-center gap-3">
+            <img src="/logo-pied-de-page.png" alt="Logo" className="h-12 w-auto object-contain" />
+            <p className="font-display text-xl tracking-[0.14em] uppercase">
+              Maison
+              <br />
+              Michèle Yakice
+            </p>
+          </div>
           <div className="woven-rule my-5 w-24" />
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
             {BRAND.tagline}

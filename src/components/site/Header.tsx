@@ -28,7 +28,7 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-border/70 bg-background">
       <div className="bg-primary py-2 text-center text-primary-foreground">
         <p className="eyebrow px-4">{BRAND.tagline}</p>
       </div>
@@ -41,13 +41,16 @@ export function Header() {
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
 
-        <Link to="/" className="mr-auto md:mr-0">
-          <span className="font-display block text-lg leading-none tracking-[0.16em] uppercase md:text-xl">
-            Maison
-          </span>
-          <span className="font-display block text-lg leading-none tracking-[0.16em] uppercase md:text-xl">
-            Michèle Yakice
-          </span>
+        <Link to="/" className="mr-auto flex items-center gap-3 md:mr-0">
+          <img src="/logo-accueil.png" alt="Logo" className="h-12 w-auto object-contain" />
+          <div>
+            <span className="font-display block text-lg leading-none tracking-[0.16em] uppercase md:text-xl">
+              Maison
+            </span>
+            <span className="font-display block text-lg leading-none tracking-[0.16em] uppercase md:text-xl">
+              Michèle Yakice
+            </span>
+          </div>
         </Link>
 
         <nav className="mx-auto hidden items-center gap-8 md:flex">
