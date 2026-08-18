@@ -12,14 +12,14 @@ import { BRAND, formatPrice, wa } from "@/lib/brand";
 export const Route = createFileRoute("/commande")({
   head: () => ({
     meta: [
-      { title: "Finaliser la commande — Maison Michèle Yakice" },
+      { title: "Finaliser la commande — Abikè" },
       {
         name: "description",
         content:
           "Renseignez vos coordonnées de livraison et choisissez votre mode de règlement : Mobile Money, virement ou paiement en boutique.",
       },
-      { property: "og:title", content: "Finaliser la commande — Maison Michèle Yakice" },
-      { property: "og:description", content: "Commande Maison Michèle Yakice." },
+      { property: "og:title", content: "Finaliser la commande — Abikè" },
+      { property: "og:description", content: "Commande Abikè." },
       { property: "og:url", content: "/commande" },
       { name: "robots", content: "noindex" },
     ],
@@ -274,8 +274,8 @@ function Checkout() {
             </p>
             {hasMadeToMeasure && (
               <p className="text-muted-foreground mt-4 text-xs leading-relaxed">
-                Pièces sur mesure incluses : le montant final vous sera confirmé
-                après prise de mesures.
+                Pièces sur mesure incluses : le montant final vous sera confirmé après prise de
+                mesures.
               </p>
             )}
             <button

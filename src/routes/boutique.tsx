@@ -10,9 +10,9 @@ type Search = {
   tri?: string;
 };
 
-const TITLE = "Boutique — Pagne tissé, lin & batik | Maison Michèle Yakice";
+const TITLE = "Boutique — Pagne tissé, batik & teinture artisanale | Abikè";
 const DESC =
-  "Parcourez la boutique en ligne : robes, tuniques, chemises en lin, tenues hommes et ensembles en pagne tissé et batik. Livraison à Abidjan et en Côte d'Ivoire.";
+  "Parcourez la boutique en ligne : robes, tuniques, chemises en coton, tenues hommes et ensembles en pagne tissé et batik. Livraison à Abomey-Calavi et partout au Bénin.";
 
 export const Route = createFileRoute("/boutique")({
   validateSearch: (search: Record<string, unknown>): Search => {
@@ -48,14 +48,8 @@ function Boutique() {
   const [onlyNew, setOnlyNew] = useState(false);
   const [onlyPromo, setOnlyPromo] = useState(false);
 
-  const allSizes = useMemo(
-    () => [...new Set(products.flatMap((p) => sizes(p)))],
-    [products],
-  );
-  const allColors = useMemo(
-    () => [...new Set(products.flatMap((p) => colors(p)))],
-    [products],
-  );
+  const allSizes = useMemo(() => [...new Set(products.flatMap((p) => sizes(p)))], [products]);
+  const allColors = useMemo(() => [...new Set(products.flatMap((p) => colors(p)))], [products]);
 
   const categoryId = categories.find((c) => c.slug === search.categorie)?.id;
 
@@ -91,9 +85,7 @@ function Boutique() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
       <p className="eyebrow text-terracotta">Boutique</p>
-      <h1 className="font-display mt-3 text-4xl md:text-5xl">
-        Toutes nos créations
-      </h1>
+      <h1 className="font-display mt-3 text-4xl md:text-5xl">Toutes nos créations</h1>
       <div className="woven-rule my-8 w-32" />
 
       <div className="flex flex-col gap-6 lg:flex-row">
@@ -113,7 +105,7 @@ function Boutique() {
                     },
                   })
                 }
-                placeholder="Robe, lin, batik…"
+                placeholder="Robe, batik, teinture artisanale…"
                 className="mt-2 w-full border-b border-border bg-transparent py-2 text-sm outline-none"
               />
             </div>
@@ -140,9 +132,7 @@ function Boutique() {
                 {categories.map((c) => (
                   <li key={c.id}>
                     <button
-                      className={
-                        search.categorie === c.slug ? "underline underline-offset-4" : ""
-                      }
+                      className={search.categorie === c.slug ? "underline underline-offset-4" : ""}
                       onClick={() =>
                         navigate({
                           search: (prev: Search) => ({ ...prev, categorie: c.slug }),

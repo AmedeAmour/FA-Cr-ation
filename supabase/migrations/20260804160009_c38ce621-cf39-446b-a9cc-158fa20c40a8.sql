@@ -167,7 +167,7 @@ CREATE POLICY "admins manage reviews" ON public.reviews FOR ALL TO authenticated
 CREATE TABLE public.delivery_zones (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   name text NOT NULL,
-  region text NOT NULL DEFAULT 'Abidjan',
+  region text NOT NULL DEFAULT 'Abomey-Calavi',
   fee_xof integer NOT NULL DEFAULT 0,
   is_active boolean NOT NULL DEFAULT true,
   position int NOT NULL DEFAULT 0
@@ -230,46 +230,49 @@ CREATE POLICY "admins manage order items" ON public.order_items FOR ALL TO authe
 
 -- SEED CATEGORIES
 INSERT INTO public.categories (name, slug, description, position) VALUES
- ('Chemises en Lin','chemises-lin','Chemises en lin nobles, coupes contemporaines.',1),
- ('Robes & Tuniques','robes-tuniques','Robes longues fluides et tuniques Napié, Kimo Royale.',2),
- ('Tenues Hommes','tenues-hommes','Ensembles et tenues masculines en pagne tissé, lin et batik.',3),
+ ('Pagnes Batik','pagnes-batik','Pagnes batik 100% coton, teints à la main et riches en couleurs.',1),
+ ('Robes & Tuniques','robes-tuniques','Pagne tissé, robes, tuniques et créations élégantes pour vos occasions.',2),
+ ('Tenues Hommes','tenues-hommes','Ensembles et tenues masculines en pagne tissé, batik et teinture artisanale.',3),
  ('Ensembles','ensembles','Ensembles pantalons et pièces coordonnées.',4),
- ('Édition MASA','edition-masa','Collection événementielle Édition MASA.',5),
- ('LES BÂTISSEURS','les-batisseurs','Collection LES BÂTISSEURS.',6),
+ ('Teinture Artisanale','teinture-artisanale','Tissus teints à la main, motifs circulaires, linéaires et abstraits.',5),
+ ('Créations Sur Mesure','creations-sur-mesure','Tenues uniques créées selon vos envies et vos mesures.',6),
  ('Accessoires','accessoires','Écharpes et accessoires en pagne tissé.',7),
  ('Sur mesure','sur-mesure','Pièces uniques réalisées sur mesure.',8);
 
 -- SEED DELIVERY ZONES
 INSERT INTO public.delivery_zones (name, region, fee_xof, position) VALUES
- ('Cocody','Abidjan',0,1),('Angré','Abidjan',0,2),('Plateau','Abidjan',0,3),
- ('Marcory','Abidjan',0,4),('Treichville','Abidjan',0,5),('Yopougon','Abidjan',0,6),
- ('Abobo','Abidjan',0,7),('Koumassi','Abidjan',0,8),('Port-Bouët','Abidjan',0,9),
- ('Bingerville','Abidjan',0,10),('Autres villes de Côte d''Ivoire','Intérieur',0,11);
+ ('Abomey-Calavi','Atlantique',0,1),('Cotonou','Littoral',0,2),('Porto-Novo','Ouémé',0,3),
+ ('Parakou','Borgou',0,4),('Bohicon','Zou',0,5),('Ouidah','Atlantique',0,6),
+ ('Lokossa','Mono',0,7),('Natitingou','Atacora',0,8),('Djougou','Donga',0,9),
+ ('Autres villes du Bénin','Bénin',0,10);
 
 -- SEED PRODUCTS (prix non renseignés : affichés « Sur mesure »)
 INSERT INTO public.products (name, slug, category_id, short_description, description, material, composition, care, gender, is_made_to_measure, is_new, is_featured)
 SELECT v.name, v.slug, c.id, v.short_description, v.description, v.material, v.composition, v.care, v.gender, true, v.is_new, v.is_featured
 FROM (VALUES
- ('Chemise Lin Écru','chemise-lin-ecru','chemises-lin','Chemise en lin lavé, col italien.','Chemise en lin lavé aux finitions artisanales, pensée pour la chaleur d''Abidjan comme pour les soirées habillées.','Lin','100% lin','Lavage à la main ou cycle délicat 30°C, repassage à basse température.','homme',true,true),
- ('Chemise Lin Terracotta','chemise-lin-terracotta','chemises-lin','Chemise en lin teinté naturellement.','Lin teinté naturellement dans une nuance terracotta, coupe droite et boutons discrets.','Lin','100% lin','Lavage délicat 30°C, séchage à l''ombre.','homme',true,false),
- ('Robe Longue Sènè','robe-longue-sene','robes-tuniques','Robe longue fluide en pagne tissé.','Robe longue fluide en pagne tissé à la main, ceinture nouée et tombé architectural.','Pagne tissé','Coton tissé main','Nettoyage à sec recommandé.','femme',true,true),
- ('Tunique Napié','tunique-napie','robes-tuniques','Tunique Napié en batik.','Tunique Napié en batik, coupe ample et broderies fines aux emmanchures.','Batik','Coton batik teinté à la main','Lavage à la main, eau froide, séparément.','femme',true,true),
- ('Kimo Royale','kimo-royale','robes-tuniques','Tunique kimono en pagne tissé.','Kimo Royale : tunique kimono en pagne tissé, ceinture obi et manches amples.','Pagne tissé','Coton tissé main','Nettoyage à sec recommandé.','femme',true,false),
- ('Ensemble Pantalon Baoulé','ensemble-pantalon-baoule','ensembles','Ensemble deux pièces en pagne tissé.','Ensemble deux pièces : veste courte structurée et pantalon fluide en pagne tissé traçable.','Pagne tissé','Coton tissé main','Nettoyage à sec recommandé.','femme',true,false),
- ('Tenue Homme Bâtisseur','tenue-homme-batisseur','tenues-hommes','Tenue masculine deux pièces.','Tenue deux pièces de la collection LES BÂTISSEURS : haut à col mao et pantalon droit.','Pagne tissé','Coton tissé main','Nettoyage à sec recommandé.','homme',true,true),
- ('Boubou Lin Anthracite','boubou-lin-anthracite','tenues-hommes','Boubou contemporain en lin.','Boubou contemporain en lin anthracite, broderies discrètes fil à fil.','Lin','100% lin','Lavage délicat 30°C.','homme',true,false),
- ('Silhouette MASA','silhouette-masa','edition-masa','Pièce de l''Édition MASA.','Pièce d''exception de l''Édition MASA, présentée lors de nos rendez-vous culturels.','Pagne tissé','Coton tissé main','Nettoyage à sec exclusivement.','femme',true,true),
- ('Cape Les Bâtisseurs','cape-les-batisseurs','les-batisseurs','Cape longue en pagne tissé.','Cape longue en pagne tissé, doublure lin, pièce signature de la collection LES BÂTISSEURS.','Pagne tissé','Coton tissé main, doublure lin','Nettoyage à sec exclusivement.','femme',true,false),
- ('Écharpe Pagne Tissé','echarpe-pagne-tisse','accessoires','Écharpe tissée main.','Écharpe en pagne tissé main, teintures naturelles, franges nouées à la main.','Pagne tissé','Coton tissé main','Lavage à la main, eau froide.','femme',true,false),
- ('Pièce Sur Mesure','piece-sur-mesure','sur-mesure','Création entièrement sur mesure.','Création entièrement sur mesure : nous dessinons votre pièce avec vous, du choix du fil aux finitions.','Pagne tissé, lin ou batik','Selon sélection','Selon matière choisie.','femme',true,true)
+ ('Pagne Batik Violet Royal','chemise-lin-ecru','pagnes-batik','Pagne Abikè violet royal 100% coton.','Motif batik moderne teint à la main, doux, respirant et idéal pour les cérémonies, le bureau ou les sorties.','Batik','100% coton béninois','Lavage à la main ou cycle délicat 30°C, repassage à basse température.','homme',true,true),
+ ('Pagne Batik Rouge & Blanc','chemise-lin-terracotta','pagnes-batik','Pagne batik rouge et blanc.','Pagne 100% coton sublimé par des motifs tie-dye originaux, moderne et authentique.','Batik','100% coton béninois','Lavage délicat 30°C, séchage à l''ombre.','homme',true,false),
+ ('Pagne Tissé Bleu Gris Blanc','robe-longue-sene','robes-tuniques','Pagne tissé aux rayures bleu, gris et blanc.','Tissu chic, sobre et intemporel, idéal pour robes, ensembles, chemises, vestes et créations sur mesure.','Pagne tissé','Coton tissé main','Nettoyage à sec recommandé.','femme',true,true),
+ ('Batik Brun Caramel','tunique-napie','robes-tuniques','Batik artisanal brun, caramel, ocre et ivoire.','Motifs abstraits et raffinés pour chemises, ensembles, robes, vestes, pantalons et tenues de couple.','Batik','Coton batik teinté à la main','Lavage à la main, eau froide, séparément.','femme',true,true),
+ ('Pagne Tissé Vert & Blanc','kimo-royale','robes-tuniques','Pagne tissé vert et blanc.','Tissage de qualité, finition soignée et élégante pour mariages, fiançailles, cérémonies et événements culturels.','Pagne tissé','Coton tissé main','Nettoyage à sec recommandé.','femme',true,false),
+ ('Pagne Teint Vert Turquoise','ensemble-pantalon-baoule','ensembles','Pagne teint artisanal vert turquoise.','Motifs artistiques uniques, 100% coton béninois, agréable au toucher et adapté aux hommes, femmes et enfants.','Pagne tissé','Coton tissé main','Nettoyage à sec recommandé.','femme',true,false),
+ ('Pagne Batik Bleu Roi','tenue-homme-batisseur','tenues-hommes','Pagne batik bleu roi 100% coton.','Teint à la main avec soin, ce bleu paisible donne de la prestance et sublime les créations élégantes.','Pagne tissé','Coton tissé main','Nettoyage à sec recommandé.','homme',true,true),
+ ('Pagne Tissé Marron Bleu Royal','boubou-lin-anthracite','tenues-hommes','Pagne tissé marron et bleu royal.','Fond marron chaleureux, large bande bleu royal, fines rayures blanches et touches rouges pour des créations distinguées.','Batik','100% coton béninois','Lavage délicat 30°C.','homme',true,false),
+ ('Pagne Tissé Rayures Dorées','silhouette-masa','teinture-artisanale','Pagne tissé aux rayures élégantes.','Rayures bleu profond, blanc, marron et touches dorées pour robes, ensembles, chemises et accessoires.','Pagne tissé','Coton tissé main','Nettoyage à sec exclusivement.','femme',true,true),
+ ('Formation Teinture Artisanale','cape-les-batisseurs','creations-sur-mesure','Atelier pratique de teinture artisanale.','Initiation aux motifs circulaires et linéaires, pliage, nouage et application de la teinture au centre Abikè de Parakou.','Pagne tissé','Coton tissé main','Nettoyage à sec exclusivement.','femme',true,false),
+ ('Accessoires en Pagne Tissé','echarpe-pagne-tisse','accessoires','Accessoires en pagne tissé.','Écharpes et accessoires en tissu tissé, parfaits pour compléter une tenue avec authenticité.','Pagne tissé','Coton tissé main','Lavage à la main, eau froide.','femme',true,false),
+ ('Création Sur Mesure Abikè','piece-sur-mesure','sur-mesure','Création entièrement sur mesure.','Création entièrement sur mesure : nous transformons vos pagnes tissés, batiks et tissus teints en tenues qui vous ressemblent.','Pagne tissé, batik ou teinture artisanale','Selon sélection','Selon matière choisie.','femme',true,true)
 ) AS v(name, slug, cat, short_description, description, material, composition, care, gender, is_new, is_featured)
 JOIN public.categories c ON c.slug = v.cat;
 
 INSERT INTO public.product_variants (product_id, size, color, stock)
-SELECT p.id, s.size, 'Écru / Terracotta', 3
+SELECT p.id, s.size, 'Selon modèle', 3
 FROM public.products p CROSS JOIN (VALUES ('XS'),('S'),('M'),('L'),('XL')) AS s(size);
 
 INSERT INTO public.product_images (product_id, url, alt, position)
-SELECT p.id, '/images/products/' || p.slug || '.jpg', p.name || ' – Maison Michèle Yakice', 0 FROM public.products p;
+SELECT p.id, '/images/products/' || p.slug || '.jpg', p.name || ' – Abikè', 0 FROM public.products p;
 INSERT INTO public.product_images (product_id, url, alt, position)
 SELECT p.id, '/images/products/detail-' || (1 + (abs(hashtext(p.slug)) % 3)) || '.jpg', p.name || ' – détail du tissu', 1 FROM public.products p;
+
+
+

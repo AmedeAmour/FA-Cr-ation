@@ -6,9 +6,9 @@ import { BRAND } from "@/lib/brand";
 import { categoriesQuery, productsQuery } from "@/lib/catalog";
 import { ProductCard } from "@/components/site/ProductCard";
 
-const TITLE = "Maison Michèle Yakice — Pagne tissé, lin & batik de luxe à Abidjan";
+const TITLE = "Abikè — Pagne tissé, batik & teinture artisanale à Abomey-Calavi";
 const DESC =
-  "Maison de mode ivoirienne spécialisée en pagne tissé, lin et batik pour femme et homme. Découvrez les collections et commandez en ligne ou sur WhatsApp.";
+  "Maison de mode béninoise spécialisée en pagne tissé, batik et teinture artisanale pour femme et homme. Découvrez les collections et commandez en ligne ou sur WhatsApp.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "pagne tissé Abidjan, vêtements en pagne tissé Côte d'Ivoire, chemises en lin Abidjan, maison de mode artisanale Côte d'Ivoire, créations en batik Abidjan, mode durable Côte d'Ivoire, artisanat textile ivoirien, Maison Michèle Yakice",
+          "pagne tissé Abomey-Calavi, vêtements en pagne tissé Bénin, chemises en coton Abomey-Calavi, maison de mode artisanale Bénin, créations en batik Abomey-Calavi, mode durable Bénin, artisanat textile béninois, Abikè",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -40,7 +40,7 @@ function Index() {
       <section className="relative">
         <div className="relative grid min-h-[86vh] items-center md:grid-cols-2">
           <div className="order-2 px-6 py-16 md:order-1 md:px-16">
-            <p className="eyebrow text-terracotta">Artisanat d'exception — Abidjan</p>
+            <p className="eyebrow text-terracotta">Artisanat d'exception — Abomey-Calavi</p>
             <h1 className="font-display mt-6 text-5xl leading-[1.05] md:text-7xl">
               Le pagne tissé
               <br />
@@ -48,15 +48,11 @@ function Index() {
             </h1>
             <div className="woven-rule my-8 w-32" />
             <p className="text-muted-foreground max-w-lg text-base leading-relaxed">
-              Chaque fil est traçable, teinté naturellement, et tissé selon des
-              pratiques durables qui soutiennent un artisanat local équitable,
-              porté en grande partie par des femmes.
+              Chaque fil est traçable, teinté naturellement, et tissé selon des pratiques durables
+              qui soutiennent un artisanat local équitable, porté en grande partie par des femmes.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <Link
-                to="/boutique"
-                className="eyebrow bg-primary text-primary-foreground px-8 py-4"
-              >
+              <Link to="/boutique" className="eyebrow bg-primary text-primary-foreground px-8 py-4">
                 Découvrir la collection
               </Link>
               <a
@@ -72,7 +68,7 @@ function Index() {
           <div className="order-1 h-[60vh] md:order-2 md:h-[86vh]">
             <img
               src={heroImage}
-              alt="Robe longue en pagne tissé, Maison Michèle Yakice"
+              alt="Robe longue en pagne tissé, Abikè"
               width={1600}
               height={1920}
               className="size-full object-cover"
@@ -85,9 +81,7 @@ function Index() {
         <div className="flex items-end justify-between">
           <div>
             <p className="eyebrow text-terracotta">Collections</p>
-            <h2 className="font-display mt-3 text-3xl md:text-4xl">
-              Nos univers
-            </h2>
+            <h2 className="font-display mt-3 text-3xl md:text-4xl">Nos univers</h2>
           </div>
           <Link to="/collections" className="eyebrow underline underline-offset-4">
             Tout voir
@@ -102,12 +96,8 @@ function Index() {
               className="bg-background group p-8 transition-colors hover:bg-sand"
             >
               <h3 className="font-display text-2xl">{c.name}</h3>
-              <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
-                {c.description}
-              </p>
-              <span className="eyebrow text-terracotta mt-6 inline-block">
-                Explorer
-              </span>
+              <p className="text-muted-foreground mt-3 text-sm leading-relaxed">{c.description}</p>
+              <span className="eyebrow text-terracotta mt-6 inline-block">Explorer</span>
             </Link>
           ))}
         </div>
@@ -116,9 +106,7 @@ function Index() {
       <section className="bg-sand py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <p className="eyebrow text-terracotta">Pièces signatures</p>
-          <h2 className="font-display mt-3 text-3xl md:text-4xl">
-            Mises en avant
-          </h2>
+          <h2 className="font-display mt-3 text-3xl md:text-4xl">Mises en avant</h2>
           <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {showcase.map((p) => (
               <ProductCard key={p.id} product={p} />
@@ -138,15 +126,12 @@ function Index() {
         />
         <div>
           <p className="eyebrow text-terracotta">Savoir-faire</p>
-          <h2 className="font-display mt-3 text-3xl md:text-4xl">
-            Un fil, une main, une histoire
-          </h2>
+          <h2 className="font-display mt-3 text-3xl md:text-4xl">Un fil, une main, une histoire</h2>
           <div className="hairline my-6 w-24" />
           <p className="text-muted-foreground leading-relaxed">
-            Nous choisissons des matières nobles — pagne tissé, lin, batik — et
-            travaillons avec des artisans dont le geste se transmet. Les
-            teintures sont naturelles, les finitions faites à la main, et chaque
-            pièce se porte longtemps.
+            Nous choisissons des matières nobles — pagne tissé, batik, teinture artisanale — et
+            travaillons avec des artisans dont le geste se transmet. Les teintures sont naturelles,
+            les finitions faites à la main, et chaque pièce se porte longtemps.
           </p>
           <Link to="/a-propos" className="eyebrow mt-8 inline-block underline underline-offset-4">
             La Maison
@@ -161,23 +146,19 @@ function Index() {
             Nous dessinons votre pièce avec vous
           </h2>
           <p className="text-primary-foreground/70 mx-auto mt-5 max-w-xl leading-relaxed">
-            Du choix du fil aux finitions, nos conseillers vous accompagnent.
-            Prenez rendez-vous à la boutique d'Angré 8ème Tranche ou échangez
-            avec nous sur WhatsApp.
+            Du choix du fil aux finitions, nos conseillers vous accompagnent. Prenez rendez-vous à
+            la boutique d'Abomey-Calavi ou échangez avec nous sur WhatsApp.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
-              href={`${BRAND.whatsappUrl}?text=${encodeURIComponent("Bonjour Maison Michèle Yakice, je souhaite prendre rendez-vous pour une pièce sur mesure.")}`}
+              href={`${BRAND.whatsappUrl}?text=${encodeURIComponent("Bonjour Abikè, je souhaite prendre rendez-vous pour une pièce sur mesure.")}`}
               target="_blank"
               rel="noreferrer"
               className="eyebrow bg-gold text-gold-foreground px-8 py-4"
             >
               Prendre rendez-vous
             </a>
-            <Link
-              to="/contact"
-              className="eyebrow border border-primary-foreground/40 px-8 py-4"
-            >
+            <Link to="/contact" className="eyebrow border border-primary-foreground/40 px-8 py-4">
               Demander des informations
             </Link>
           </div>

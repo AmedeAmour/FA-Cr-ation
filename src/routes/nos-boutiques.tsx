@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BRAND } from "@/lib/brand";
 
-const TITLE = "Nos boutiques à Abidjan — Maison Michèle Yakice";
+const TITLE = "Nos boutiques au Bénin — Abikè";
 const DESC =
-  "Retrouvez Maison Michèle Yakice à Angré 8ème Tranche (Cocody), au Palais de la Culture de Treichville et à Yamoussoukro. Horaires, adresses et itinéraire.";
+  "Retrouvez Abikè à Abomey-Calavi et au centre de la coopérative à Parakou. Horaires, adresses et itinéraire.";
 
 export const Route = createFileRoute("/nos-boutiques")({
   head: () => ({
@@ -21,22 +21,23 @@ export const Route = createFileRoute("/nos-boutiques")({
 
 const STORES = [
   {
-    name: "Boutique Angré 8ème Tranche",
-    city: "Cocody, Abidjan",
+    name: "Boutique Abomey-Calavi",
+    city: "Abomey-Calavi, Bénin",
     address: BRAND.boutique.address,
     hours: "Lundi – Samedi, 9h – 19h",
   },
   {
-    name: "Palais de la Culture",
-    city: "Treichville, Abidjan",
-    address: "Palais de la Culture de Treichville, Abidjan, Côte d'Ivoire.",
+    name: "Coopérative Abikè",
+    city: "Parakou, Bénin",
+    address: "Centre de la coopérative Abikè, Parakou, Bénin.",
     hours: "Lundi – Samedi, 10h – 18h",
   },
   {
-    name: "Boutique Yamoussoukro",
-    city: "Yamoussoukro",
-    address: "Yamoussoukro, Côte d'Ivoire.",
-    hours: "Lundi – Samedi, 9h – 18h",
+    name: "Livraison nationale",
+    city: "Partout au Bénin",
+    address:
+      "Commandes et renseignements par WhatsApp, avec livraison disponible partout au Bénin.",
+    hours: "Renseignements aux heures d'ouverture",
   },
 ];
 
@@ -52,9 +53,7 @@ function Stores() {
           <div key={s.name} className="border border-border p-8">
             <h2 className="font-display text-2xl">{s.name}</h2>
             <p className="eyebrow text-terracotta mt-2">{s.city}</p>
-            <p className="text-muted-foreground mt-5 text-sm leading-relaxed">
-              {s.address}
-            </p>
+            <p className="text-muted-foreground mt-5 text-sm leading-relaxed">{s.address}</p>
             <p className="mt-5 text-sm">{s.hours}</p>
           </div>
         ))}
@@ -62,7 +61,7 @@ function Stores() {
 
       <div className="mt-14 aspect-16/9 w-full overflow-hidden border border-border">
         <iframe
-          title="Carte de la boutique Angré 8ème Tranche"
+          title="Carte de la boutique Abikè à Abomey-Calavi"
           src={BRAND.mapsEmbed}
           loading="lazy"
           className="size-full"

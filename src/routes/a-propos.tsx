@@ -2,9 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import atelierImage from "@/assets/atelier.jpg";
 import { BRAND } from "@/lib/brand";
 
-const TITLE = "La Maison — Artisanat textile ivoirien | Maison Michèle Yakice";
+const TITLE = "La Maison — Artisanat textile béninois | Abikè";
 const DESC =
-  "L'histoire de Maison Michèle Yakice : un artisanat textile ivoirien durable, des teintures naturelles et un atelier qui valorise le savoir-faire des femmes.";
+  "L'histoire d'Abikè : un artisanat textile béninois durable, des teintures naturelles et un atelier qui valorise le savoir-faire des femmes.";
 
 export const Route = createFileRoute("/a-propos")({
   head: () => ({
@@ -44,16 +44,13 @@ function About() {
     <div>
       <section className="mx-auto max-w-3xl px-4 py-20 text-center md:px-8">
         <p className="eyebrow text-terracotta">La Maison</p>
-        <h1 className="font-display mt-4 text-4xl md:text-5xl">
-          {BRAND.tagline}
-        </h1>
+        <h1 className="font-display mt-4 text-4xl md:text-5xl">{BRAND.tagline}</h1>
         <div className="woven-rule mx-auto my-8 w-32" />
         <p className="text-muted-foreground leading-relaxed">
-          Maison Michèle Yakice est née à Abidjan d'une conviction simple : le
-          pagne tissé mérite les codes du luxe. Nous dessinons des vêtements
-          pour femme et homme en pagne tissé, lin et batik, réalisés dans notre
-          atelier de Cocody par des artisans dont le geste se transmet de
-          génération en génération.
+          Abikè est née à Abomey-Calavi d'une conviction simple : le pagne tissé mérite les codes du
+          luxe. Nous dessinons des vêtements pour femme et homme en pagne tissé, batik et teinture
+          artisanale, réalisés dans notre atelier d'Abomey-Calavi par des artisans dont le geste se
+          transmet de génération en génération.
         </p>
       </section>
 
@@ -69,20 +66,16 @@ function About() {
           />
           <div>
             <p className="eyebrow text-terracotta">Notre atelier</p>
-            <h2 className="font-display mt-3 text-3xl">
-              Le temps long du tissage
-            </h2>
+            <h2 className="font-display mt-3 text-3xl">Le temps long du tissage</h2>
             <p className="text-muted-foreground mt-5 leading-relaxed">
-              Un métier à tisser ne se presse pas. Chaque bande de pagne demande
-              des heures d'attention avant d'être assemblée, coupée puis
-              finie à la main. C'est ce temps qui donne à nos pièces leur
-              tenue, leur tombé et leur caractère.
+              Un métier à tisser ne se presse pas. Chaque bande de pagne demande des heures
+              d'attention avant d'être assemblée, coupée puis finie à la main. C'est ce temps qui
+              donne à nos pièces leur tenue, leur tombé et leur caractère.
             </p>
             <p className="text-muted-foreground mt-4 leading-relaxed">
-              Notre atelier accueille également l'école internationale de
-              formation professionnelle Michèle Yakice, où les jeunes couturières
-              apprennent la coupe, le montage et la valorisation des matières
-              locales.
+              À Parakou, le centre de la coopérative Abikè accompagne aussi des bénéficiaires dans
+              la teinture artisanale, avec des ateliers pratiques autour du pliage, du nouage et des
+              motifs circulaires ou linéaires.
             </p>
           </div>
         </div>
@@ -96,9 +89,7 @@ function About() {
             <div key={v.title}>
               <div className="hairline mb-5 w-12" />
               <h3 className="font-display text-xl">{v.title}</h3>
-              <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
-                {v.text}
-              </p>
+              <p className="text-muted-foreground mt-3 text-sm leading-relaxed">{v.text}</p>
             </div>
           ))}
         </div>
@@ -106,17 +97,12 @@ function About() {
 
       <section className="bg-primary text-primary-foreground py-16 text-center">
         <h2 className="font-display text-3xl">Venez nous rencontrer</h2>
-        <p className="text-primary-foreground/70 mt-4 text-sm">
-          {BRAND.boutique.label}
-        </p>
+        <p className="text-primary-foreground/70 mt-4 text-sm">{BRAND.boutique.label}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link to="/nos-boutiques" className="eyebrow bg-gold text-gold-foreground px-8 py-4">
             Nos boutiques
           </Link>
-          <Link
-            to="/contact"
-            className="eyebrow border border-primary-foreground/40 px-8 py-4"
-          >
+          <Link to="/contact" className="eyebrow border border-primary-foreground/40 px-8 py-4">
             Nous contacter
           </Link>
         </div>

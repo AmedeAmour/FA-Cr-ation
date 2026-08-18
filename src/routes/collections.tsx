@@ -2,9 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { categoriesQuery, primaryImage, productsQuery } from "@/lib/catalog";
 
-const TITLE = "Collections — Édition MASA, LES BÂTISSEURS | Maison Michèle Yakice";
+const TITLE = "Collections — Pagnes tissés, batik & créations sur mesure | Abikè";
 const DESC =
-  "Découvrez les collections de la Maison : Édition MASA, LES BÂTISSEURS, robes et tuniques, chemises en lin, tenues hommes, ensembles et pièces sur mesure.";
+  "Découvrez les collections de la Maison : pagnes tissés, batiks, tissus teints artisanalement, tenues hommes, ensembles, accessoires et pièces sur mesure.";
 
 export const Route = createFileRoute("/collections")({
   head: () => ({
@@ -35,12 +35,7 @@ function Collections() {
           const items = products.filter((p) => p.category_id === c.id);
           const cover = items[0] ? primaryImage(items[0]) : "/images/products/detail-1.jpg";
           return (
-            <Link
-              key={c.id}
-              to="/boutique"
-              search={{ categorie: c.slug }}
-              className="group block"
-            >
+            <Link key={c.id} to="/boutique" search={{ categorie: c.slug }} className="group block">
               <div className="aspect-3/2 overflow-hidden bg-sand">
                 <img
                   src={cover}
@@ -52,9 +47,7 @@ function Collections() {
                 />
               </div>
               <h2 className="font-display mt-5 text-2xl">{c.name}</h2>
-              <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
-                {c.description}
-              </p>
+              <p className="text-muted-foreground mt-2 text-sm leading-relaxed">{c.description}</p>
               <p className="eyebrow text-terracotta mt-4">
                 {items.length} pièce{items.length > 1 ? "s" : ""}
               </p>

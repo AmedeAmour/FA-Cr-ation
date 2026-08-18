@@ -6,16 +6,16 @@ import { BRAND, formatPrice, wa } from "@/lib/brand";
 export const Route = createFileRoute("/panier")({
   head: () => ({
     meta: [
-      { title: "Votre panier — Maison Michèle Yakice" },
+      { title: "Votre panier — Abikè" },
       {
         name: "description",
         content:
-          "Vérifiez vos pièces sélectionnées puis finalisez votre commande : livraison à Abidjan, retrait en boutique ou commande sur WhatsApp.",
+          "Vérifiez vos pièces sélectionnées puis finalisez votre commande : livraison à Abomey-Calavi, retrait en boutique ou commande sur WhatsApp.",
       },
-      { property: "og:title", content: "Votre panier — Maison Michèle Yakice" },
+      { property: "og:title", content: "Votre panier — Abikè" },
       {
         property: "og:description",
-        content: "Finalisez votre commande Maison Michèle Yakice.",
+        content: "Finalisez votre commande Abikè.",
       },
       { property: "og:url", content: "/panier" },
       { name: "robots", content: "noindex" },
@@ -30,9 +30,7 @@ function Panier() {
 
   const waMessage = wa(
     `Bonjour ${BRAND.name}, je souhaite commander :\n` +
-      lines
-        .map((l) => `• ${l.name} — taille ${l.size} × ${l.quantity}`)
-        .join("\n"),
+      lines.map((l) => `• ${l.name} — taille ${l.size} × ${l.quantity}`).join("\n"),
   );
 
   return (
@@ -76,9 +74,7 @@ function Panier() {
                       type="number"
                       min={1}
                       value={l.quantity}
-                      onChange={(e) =>
-                        setQuantity(l.productId, l.size, Number(e.target.value))
-                      }
+                      onChange={(e) => setQuantity(l.productId, l.size, Number(e.target.value))}
                       className="w-16 border border-border bg-transparent px-2 py-1 text-sm"
                       aria-label="Quantité"
                     />
@@ -104,8 +100,8 @@ function Panier() {
             </p>
             {hasMadeToMeasure && (
               <p className="text-muted-foreground max-w-md text-right text-xs">
-                Votre panier contient des pièces sur mesure : le montant vous
-                sera confirmé par un conseiller avant règlement.
+                Votre panier contient des pièces sur mesure : le montant vous sera confirmé par un
+                conseiller avant règlement.
               </p>
             )}
             <div className="mt-4 flex flex-wrap justify-end gap-3">
@@ -117,10 +113,7 @@ function Panier() {
               >
                 Commander sur WhatsApp
               </a>
-              <Link
-                to="/commande"
-                className="eyebrow bg-primary text-primary-foreground px-8 py-4"
-              >
+              <Link to="/commande" className="eyebrow bg-primary text-primary-foreground px-8 py-4">
                 Passer commande
               </Link>
             </div>

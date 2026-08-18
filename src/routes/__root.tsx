@@ -82,16 +82,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Maison Michèle Yakice — Pagne tissé, lin & batik de luxe" },
+      { title: "Abikè — Pagne tissé, batik & teinture artisanale" },
       {
         name: "description",
         content:
-          "Maison de mode ivoirienne : vêtements de luxe en pagne tissé, lin et batik pour femme et homme. Boutique en ligne, Abidjan.",
+          "Maison de mode béninoise : vêtements de luxe en pagne tissé, batik et teinture artisanale pour femme et homme. Boutique en ligne, Abomey-Calavi.",
       },
-      { name: "author", content: "Maison Michèle Yakice" },
-      { property: "og:site_name", content: "Maison Michèle Yakice" },
+      { name: "author", content: "Abikè" },
+      { property: "og:site_name", content: "Abikè" },
       { property: "og:type", content: "website" },
-      { property: "og:locale", content: "fr_CI" },
+      { property: "og:locale", content: "fr_BJ" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -113,20 +113,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ClothingStore",
-          name: "Maison Michèle Yakice",
-          slogan: "Le pagne tissé autrement – vous allez vous aimer.",
-          email: "micheleyakice28@gmail.com",
-          telephone: ["+2250758430221", "+2250758213810"],
-          url: "https://micheleyakice.com",
+          name: "Abikè",
+          slogan: "L'élégance du tissé béninois.",
+          telephone: ["+2290162482525", "+2290167648045"],
+          url: "https://web.facebook.com/profile.php?id=100063839619382",
           address: {
             "@type": "PostalAddress",
-            streetAddress:
-              "Star 11, voie del hôtel Belle côte, Angré 8ème Tranche, face programme 6",
-            addressLocality: "Cocody, Abidjan",
-            addressCountry: "CI",
-            postOfficeBoxNumber: "07 BP 227 Abidjan 07",
+            streetAddress: "Maison de mode Abikè",
+            addressLocality: "Abomey-Calavi",
+            addressCountry: "BJ",
           },
-          areaServed: "Côte d'Ivoire",
+          areaServed: "Bénin",
         }),
       },
     ],
@@ -139,7 +136,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <HeadContent />
       </head>

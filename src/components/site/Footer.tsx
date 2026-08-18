@@ -11,23 +11,31 @@ export function Footer() {
             <p className="font-display text-xl tracking-[0.14em] uppercase">
               Maison
               <br />
-              Michèle Yakice
+              Abikè
             </p>
           </div>
           <div className="woven-rule my-5 w-24" />
-          <p className="text-primary-foreground/70 text-sm leading-relaxed">
-            {BRAND.tagline}
-          </p>
+          <p className="text-primary-foreground/70 text-sm leading-relaxed">{BRAND.tagline}</p>
         </div>
 
         <div>
           <p className="eyebrow text-gold">Maison</p>
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/75">
-            <li><Link to="/boutique">Boutique</Link></li>
-            <li><Link to="/collections">Collections</Link></li>
-            <li><Link to="/a-propos">La Maison</Link></li>
-            <li><Link to="/nos-boutiques">Nos boutiques</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li>
+              <Link to="/boutique">Boutique</Link>
+            </li>
+            <li>
+              <Link to="/collections">Collections</Link>
+            </li>
+            <li>
+              <Link to="/a-propos">La Maison</Link>
+            </li>
+            <li>
+              <Link to="/nos-boutiques">Nos boutiques</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
           </ul>
         </div>
 
@@ -36,15 +44,17 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/75">
             {BRAND.phones.map((p) => (
               <li key={p}>
-                <a href={`tel:${p.replace(/\s/g, "")}`}>{p}</a>
+                <a href={`tel:+229${p.replace(/\D/g, "")}`}>{p}</a>
               </li>
             ))}
             <li>
-              <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a>
-            </li>
-            <li>
               <a href={BRAND.whatsappUrl} target="_blank" rel="noreferrer">
                 Commander sur WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href={BRAND.facebook} target="_blank" rel="noreferrer">
+                Page Facebook
               </a>
             </li>
             <li>{BRAND.site}</li>
@@ -70,7 +80,7 @@ export function Footer() {
       </div>
       <div className="border-t border-primary-foreground/15 py-6 text-center">
         <p className="text-primary-foreground/50 text-xs">
-          © {new Date().getFullYear()} {BRAND.name}. Artisanat textile ivoirien.
+          © {new Date().getFullYear()} {BRAND.name}. Artisanat textile béninois.
         </p>
       </div>
     </footer>

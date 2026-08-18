@@ -23,7 +23,7 @@ export function Header() {
 
   function submitSearch(e: React.FormEvent) {
     e.preventDefault();
-    navigate({ to: "/boutique", search: { q: query || undefined } });
+    navigate({ to: "/boutique", search: query ? { q: query } : {} });
     setOpen(false);
   }
 
@@ -48,7 +48,7 @@ export function Header() {
               Maison
             </span>
             <span className="font-display block text-lg leading-none tracking-[0.16em] uppercase md:text-xl">
-              Michèle Yakice
+              Abikè
             </span>
           </div>
         </Link>
@@ -80,13 +80,9 @@ export function Header() {
         </form>
 
         <div className="flex items-center gap-3">
-          <Link
-            to={user ? "/compte" : "/auth"}
-            aria-label="Espace client"
-            className="p-1"
-          >
+          <a href={user ? "/compte" : "/auth"} aria-label="Espace client" className="p-1">
             <User className="size-5" />
-          </Link>
+          </a>
           <Link to="/panier" aria-label="Panier" className="relative p-1">
             <ShoppingBag className="size-5" />
             {count > 0 && (
@@ -110,12 +106,7 @@ export function Header() {
           </form>
           <nav className="flex flex-col gap-4">
             {NAV.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                onClick={() => setOpen(false)}
-                className="eyebrow"
-              >
+              <Link key={item.to} to={item.to} onClick={() => setOpen(false)} className="eyebrow">
                 {item.label}
               </Link>
             ))}

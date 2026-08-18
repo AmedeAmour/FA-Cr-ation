@@ -20,19 +20,19 @@ import { ProductCard } from "@/components/site/ProductCard";
 
 export const Route = createFileRoute("/produit/$slug")({
   head: ({ params }) => {
-    const title = `${params.slug.replace(/-/g, " ")} — Maison Michèle Yakice`;
+    const title = `${params.slug.replace(/-/g, " ")} — Abikè`;
     return {
       meta: [
         { title },
         {
           name: "description",
           content:
-            "Pièce artisanale en pagne tissé, lin ou batik. Tailles, matière, entretien et commande en ligne ou sur WhatsApp.",
+            "Pièce artisanale en pagne tissé, batik ou tissu teint artisanal. Tailles, matière, entretien et commande en ligne ou sur WhatsApp.",
         },
         { property: "og:title", content: title },
         {
           property: "og:description",
-          content: "Création artisanale Maison Michèle Yakice, Abidjan.",
+          content: "Création artisanale Abikè, Abomey-Calavi.",
         },
         { property: "og:type", content: "product" },
         { property: "og:url", content: `/produit/${params.slug}` },
@@ -79,9 +79,7 @@ function ProductPage() {
     );
   }
 
-  const images = [...(product.product_images ?? [])].sort(
-    (a, b) => a.position - b.position,
-  );
+  const images = [...(product.product_images ?? [])].sort((a, b) => a.position - b.position);
   const productSizes = sizes(product);
   const productColors = colors(product);
   const stock = totalStock(product);
@@ -128,10 +126,7 @@ function ProductPage() {
 
       <div className="mt-8 grid gap-12 lg:grid-cols-2">
         <div>
-          <div
-            className="aspect-4/5 overflow-hidden bg-sand"
-            onClick={() => setZoom((v) => !v)}
-          >
+          <div className="aspect-4/5 overflow-hidden bg-sand" onClick={() => setZoom((v) => !v)}>
             <img
               src={images[active]?.url ?? primaryImage(product)}
               alt={images[active]?.alt ?? product.name}
@@ -222,7 +217,7 @@ function ProductPage() {
           </div>
           <a
             href={wa(
-              `Bonjour Maison Michèle Yakice, pouvez-vous vérifier la disponibilité du modèle ${product.name} ?`,
+              `Bonjour Abikè, pouvez-vous vérifier la disponibilité du modèle ${product.name} ?`,
             )}
             target="_blank"
             rel="noreferrer"
@@ -277,9 +272,7 @@ function ProductPage() {
         <h2 className="font-display text-2xl">Avis clients</h2>
         <div className="hairline my-5 w-24" />
         {reviews.length === 0 ? (
-          <p className="text-muted-foreground text-sm">
-            Aucun avis publié pour cette pièce.
-          </p>
+          <p className="text-muted-foreground text-sm">Aucun avis publié pour cette pièce.</p>
         ) : (
           <ul className="mt-6 grid gap-6 md:grid-cols-2">
             {reviews.map((r) => (
@@ -290,9 +283,7 @@ function ProductPage() {
                   ))}
                 </div>
                 <p className="mt-3 text-sm leading-relaxed">{r.comment}</p>
-                <p className="text-muted-foreground mt-3 text-xs">
-                  {r.author_name ?? "Cliente"}
-                </p>
+                <p className="text-muted-foreground mt-3 text-xs">{r.author_name ?? "Cliente"}</p>
               </li>
             ))}
           </ul>

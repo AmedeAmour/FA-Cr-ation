@@ -71,18 +71,14 @@ export function ProductCard({ product }: { product: Product }) {
           className="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-100"
         />
         <div className="absolute top-3 left-3 flex flex-col gap-1">
-          {product.is_new && (
-            <span className="eyebrow bg-background/90 px-2 py-1">Nouveau</span>
-          )}
+          {product.is_new && <span className="eyebrow bg-background/90 px-2 py-1">Nouveau</span>}
           {product.compare_price_xof && (
             <span className="eyebrow bg-terracotta text-terracotta-foreground px-2 py-1">
               Promotion
             </span>
           )}
           {stock === 0 && !product.is_made_to_measure && (
-            <span className="eyebrow bg-primary text-primary-foreground px-2 py-1">
-              Épuisé
-            </span>
+            <span className="eyebrow bg-primary text-primary-foreground px-2 py-1">Épuisé</span>
           )}
         </div>
         <button

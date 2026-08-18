@@ -2,12 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, MapPin, Phone } from "lucide-react";
 import { BRAND, wa } from "@/lib/brand";
 
-const TITLE = "Contact — Maison Michèle Yakice, Abidjan";
+const TITLE = "Contact — Abikè, Abomey-Calavi";
 const DESC =
-  "Contactez Maison Michèle Yakice : WhatsApp, téléphone, e-mail et adresse de la boutique d'Angré 8ème Tranche à Cocody, Abidjan.";
+  "Contactez Abikè : WhatsApp, téléphone, Facebook et adresse de la maison de mode à Abomey-Calavi.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -113,10 +113,7 @@ function Contact() {
               className={field}
             />
           </div>
-          <button
-            type="submit"
-            className="eyebrow bg-primary text-primary-foreground px-8 py-4"
-          >
+          <button type="submit" className="eyebrow bg-primary text-primary-foreground px-8 py-4">
             Envoyer
           </button>
         </form>
@@ -143,20 +140,22 @@ function Contact() {
             </div>
           </div>
           <div className="flex gap-4">
-            <Mail className="text-terracotta mt-1 size-5 shrink-0" />
+            <Facebook className="text-terracotta mt-1 size-5 shrink-0" />
             <div>
-              <p className="eyebrow">E-mail</p>
+              <p className="eyebrow">Facebook</p>
               <a
-                href={`mailto:${BRAND.email}`}
+                href={BRAND.facebook}
+                target="_blank"
+                rel="noreferrer"
                 className="text-muted-foreground mt-1 block text-sm"
               >
-                {BRAND.email}
+                Page Facebook Abikè
               </a>
             </div>
           </div>
           <div className="aspect-4/3 w-full overflow-hidden border border-border">
             <iframe
-              title="Carte de la boutique Maison Michèle Yakice"
+              title="Carte de la boutique Abikè"
               src={BRAND.mapsEmbed}
               loading="lazy"
               className="size-full"
