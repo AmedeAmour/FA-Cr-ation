@@ -25,14 +25,14 @@ function NotFoundComponent() {
         <h1 className="text-7xl font-bold text-foreground">404</h1>
         <h2 className="mt-4 text-xl font-semibold text-foreground">Page introuvable</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          La page demandÃ©e n'existe pas ou a Ã©tÃ© dÃ©placÃ©e.
+          La page demandée n'existe pas ou a été déplacée.
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Retour Ã  l'accueil
+            Retour à l'accueil
           </Link>
         </div>
       </div>
@@ -54,7 +54,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           Cette page n'a pas pu se charger
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Une erreur est survenue. Vous pouvez rÃ©essayer ou revenir Ã  l'accueil.
+          Une erreur est survenue. Vous pouvez réessayer ou revenir à l'accueil.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -64,7 +64,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            RÃ©essayer
+            Réessayer
           </button>
           <a
             href="/"
@@ -83,11 +83,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Niss mode & couture â€” Maison de couture Ã  Fifadji" },
+      { title: "FA Creation - Couture sur mesure à Cotonou" },
       {
         name: "description",
         content:
-          "Niss mode & couture confectionne vos tenues sur mesure Ã  Fifadji : nouvelles collections, couture express 24h, robes, tenues Ã©vÃ©nementielles, livraison et expÃ©dition partout.",
+          "FA Creation confectionne costumes, chemises, pantalons, agbada et tenues sur mesure à Cotonou, avec livraison 72h et express 24h selon le modèle.",
       },
       { name: "author", content: BRAND.name },
       { property: "og:site_name", content: BRAND.name },
@@ -116,16 +116,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "ClothingStore",
           name: BRAND.name,
           slogan: BRAND.tagline,
-          telephone: ["+2290196652727"],
+          telephone: ["+22940367818"],
           email: BRAND.email,
           url: BRAND.facebook,
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Atelier Niss mode & couture",
-            addressLocality: "Fifadji, Cotonou",
+            streetAddress: "Atelier FA Creation",
+            addressLocality: "Cotonou",
             addressCountry: "BJ",
           },
-          areaServed: "BÃ©nin",
+          areaServed: "Bénin",
         }),
       },
     ],
@@ -169,5 +169,4 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-
 

@@ -1,10 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import atelierImage from "@/assets/atelier.jpg";
 import { BRAND } from "@/lib/brand";
 
-const TITLE = "La Maison — Niss mode & couture";
+const TITLE = "La Maison - FA Creation";
 const DESC =
-  "Découvrez Niss mode & couture, maison de couture à Fifadji pour vos projets de confection, nouvelles collections et urgences de tenues.";
+  "Découvrez FA Creation, atelier de couture sur mesure à Cotonou pour costumes, chemises, pantalons, agbada, good luck et tenues prêtes en 72h.";
 
 export const Route = createFileRoute("/a-propos")({
   head: () => ({
@@ -23,19 +23,19 @@ export const Route = createFileRoute("/a-propos")({
 const VALUES = [
   {
     title: "Sur mesure",
-    text: "Chaque projet part de vos mesures, de votre événement et du style que vous souhaitez porter.",
+    text: "Chaque tenue part de vos mesures, de votre style et de l'occasion pour laquelle vous voulez vous démarquer.",
   },
   {
-    title: "Couture express",
-    text: "Pour les urgences, l'atelier vérifie la possibilité d'une confection en 24h selon le modèle.",
+    title: "Tout fourni",
+    text: "L'atelier peut vous accompagner sur le choix du tissu, la coupe, la confection et les finitions.",
   },
   {
-    title: "Finitions soignées",
-    text: "Les coupes, reprises et détails sont travaillés pour une tenue élégante et confortable.",
+    title: "Finitions impeccables",
+    text: "Les détails, broderies, coupes et reprises sont travaillés pour un rendu propre et élégant.",
   },
   {
-    title: "Livraison partout",
-    text: "Les commandes peuvent être suivies par appel ou WhatsApp, avec livraison et expédition.",
+    title: "72h & express 24h",
+    text: "Livraison en 72h et express 24h selon le modèle, les matières disponibles et la charge de l'atelier.",
   },
 ];
 
@@ -44,12 +44,12 @@ function About() {
     <div>
       <section className="mx-auto max-w-3xl px-4 py-20 text-center md:px-8">
         <p className="eyebrow text-terracotta">La Maison</p>
-        <h1 className="font-display mt-4 text-4xl md:text-5xl">{BRAND.name}</h1>
+        <h1 className="font-display mt-4 text-4xl md:text-5xl">{BRAND.displayName}</h1>
         <div className="woven-rule mx-auto my-8 w-32" />
         <p className="text-muted-foreground leading-relaxed">
-          Niss mode & couture est une maison de couture et de mode située à Fifadji. L'atelier
-          confectionne des tenues pour vos événements, propose de nouvelles collections disponibles
-          en boutique et répond aux urgences de tenues quand le délai le permet.
+          FA Creation est un atelier de mode et de couture sur mesure basé à Cotonou. La maison
+          réalise des costumes, chemises, pantalons, agbada, good luck et tenues modernes ou
+          traditionnelles pour les clients qui veulent être élégants sans stress.
         </p>
       </section>
 
@@ -57,7 +57,7 @@ function About() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 md:grid-cols-2 md:px-8">
           <img
             src={atelierImage}
-            alt="Atelier de couture Niss mode & couture"
+            alt="Atelier de couture FA Creation"
             loading="lazy"
             width={1600}
             height={1104}
@@ -65,14 +65,14 @@ function About() {
           />
           <div>
             <p className="eyebrow text-terracotta">Notre atelier</p>
-            <h2 className="font-display mt-3 text-3xl">Confiez-nous votre projet</h2>
+            <h2 className="font-display mt-3 text-3xl">Votre style, notre savoir-faire</h2>
             <p className="text-muted-foreground mt-5 leading-relaxed">
-              Robe, ensemble, tenue de cérémonie, ajustement ou création personnalisée : l'atelier
-              échange avec vous sur le modèle, les mesures, le délai et les finitions attendues.
+              Vous venez avec une envie, une occasion ou une inspiration. FA Creation vous guide sur
+              le choix du tissu, les mesures, la coupe, les détails et le délai de confection.
             </p>
             <p className="text-muted-foreground mt-4 leading-relaxed">
               Pour les urgences, contactez directement le {BRAND.phones[0]} par appel ou WhatsApp afin
-              de confirmer la faisabilité d'une confection express en 24h.
+              de confirmer la faisabilité d'une confection express 24h ou d'une livraison en 72h.
             </p>
           </div>
         </div>
@@ -80,7 +80,7 @@ function About() {
 
       <section className="mx-auto max-w-7xl px-4 py-20 md:px-8">
         <p className="eyebrow text-terracotta">Nos engagements</p>
-        <h2 className="font-display mt-3 text-3xl">Une couture professionnelle</h2>
+        <h2 className="font-display mt-3 text-3xl">Une élégance faite pour vous</h2>
         <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {VALUES.map((v) => (
             <div key={v.title}>
@@ -93,7 +93,7 @@ function About() {
       </section>
 
       <section className="bg-primary text-primary-foreground py-16 text-center">
-        <h2 className="font-display text-3xl">Venez à l'atelier</h2>
+        <h2 className="font-display text-3xl">Passez votre commande</h2>
         <p className="text-primary-foreground/70 mt-4 text-sm">{BRAND.boutique.label}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link to="/nos-boutiques" className="eyebrow bg-gold text-gold-foreground px-8 py-4">
@@ -107,3 +107,4 @@ function About() {
     </div>
   );
 }
+

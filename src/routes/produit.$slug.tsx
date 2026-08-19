@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { Heart, ShoppingBag, Star } from "lucide-react";
@@ -20,19 +20,19 @@ import { ProductCard } from "@/components/site/ProductCard";
 
 export const Route = createFileRoute("/produit/$slug")({
   head: ({ params }) => {
-    const title = `${params.slug.replace(/-/g, " ")} — Niss mode & couture`;
+    const title = `${params.slug.replace(/-/g, " ")} - FA Creation`;
     return {
       meta: [
         { title },
         {
           name: "description",
           content:
-            "Création de couture sur mesure ou modèle disponible. Tailles, matières, entretien et commande en ligne ou sur WhatsApp.",
+            "Création FA Creation sur mesure ou disponible sur commande. Tailles, matières, entretien et commande sur WhatsApp.",
         },
         { property: "og:title", content: title },
         {
           property: "og:description",
-          content: "Création artisanale Niss mode & couture, Fifadji.",
+          content: "Création sur mesure FA Creation, Cotonou.",
         },
         { property: "og:type", content: "product" },
         { property: "og:url", content: `/produit/${params.slug}` },
@@ -44,11 +44,11 @@ export const Route = createFileRoute("/produit/$slug")({
 });
 
 const GUIDE = [
-  ["XS", "34", "82 cm", "62 cm"],
-  ["S", "36 – 38", "88 cm", "68 cm"],
-  ["M", "40 – 42", "94 cm", "74 cm"],
-  ["L", "44 – 46", "100 cm", "80 cm"],
-  ["XL", "48 – 50", "108 cm", "88 cm"],
+  ["S", "36 - 38", "88 cm", "76 cm"],
+  ["M", "40 - 42", "96 cm", "84 cm"],
+  ["L", "44 - 46", "104 cm", "92 cm"],
+  ["XL", "48 - 50", "112 cm", "100 cm"],
+  ["Sur mesure", "Ajusté", "Sur mesure", "Sur mesure"],
 ];
 
 function ProductPage() {
@@ -66,7 +66,7 @@ function ProductPage() {
   const [zoom, setZoom] = useState(false);
 
   if (isLoading) {
-    return <p className="mx-auto max-w-7xl px-4 py-24 text-sm">Chargement…</p>;
+    return <p className="mx-auto max-w-7xl px-4 py-24 text-sm">Chargement...</p>;
   }
   if (!product) {
     return (
@@ -186,7 +186,7 @@ function ProductPage() {
             </div>
             <p className="text-muted-foreground mt-3 text-xs">
               {product.is_made_to_measure
-                ? "Pièce réalisée sur mesure — délai communiqué par nos conseillers."
+                ? "Pièce réalisée sur mesure - délai confirmé par nos conseillers."
                 : stock > 0
                   ? "En stock"
                   : "Sur commande"}
@@ -217,7 +217,7 @@ function ProductPage() {
           </div>
           <a
             href={wa(
-              `Bonjour Niss mode & couture, pouvez-vous vérifier la disponibilité du modèle ${product.name} ?`,
+              `Bonjour FA Creation, pouvez-vous vérifier la disponibilité du modèle ${product.name} ?`,
             )}
             target="_blank"
             rel="noreferrer"
@@ -283,7 +283,7 @@ function ProductPage() {
                   ))}
                 </div>
                 <p className="mt-3 text-sm leading-relaxed">{r.comment}</p>
-                <p className="text-muted-foreground mt-3 text-xs">{r.author_name ?? "Cliente"}</p>
+                <p className="text-muted-foreground mt-3 text-xs">{r.author_name ?? "Client"}</p>
               </li>
             ))}
           </ul>
@@ -303,5 +303,9 @@ function ProductPage() {
     </div>
   );
 }
+
+
+
+
 
 

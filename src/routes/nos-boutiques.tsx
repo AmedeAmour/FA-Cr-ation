@@ -1,9 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { BRAND } from "@/lib/brand";
 
-const TITLE = "Atelier à Fifadji — Niss mode & couture";
+const TITLE = "Atelier à Cotonou - FA Creation";
 const DESC =
-  "Retrouvez Niss mode & couture à Fifadji. Confection sur mesure, couture express, nouvelles collections, livraison et expédition partout.";
+  "Retrouvez FA Creation à Cotonou. Costumes, chemises, pantalons, agbada et tenues sur mesure avec livraison 72h et express 24h.";
 
 export const Route = createFileRoute("/nos-boutiques")({
   head: () => ({
@@ -21,24 +21,24 @@ export const Route = createFileRoute("/nos-boutiques")({
 
 const STORES = [
   {
-    name: "Atelier Niss mode & couture",
-    city: "Fifadji, Cotonou",
+    name: "Atelier FA Creation",
+    city: "Cotonou, Bénin",
     address: BRAND.boutique.address,
     hours: "Contactez l'atelier par appel ou WhatsApp avant votre passage",
   },
   {
-    name: "Couture express",
-    city: "Urgences de tenues",
+    name: "Livraison 72h",
+    city: "Commandes sur mesure",
     address:
-      "Confection possible en 24h selon le modèle, les matières disponibles et la charge de l'atelier.",
+      "L'atelier peut gérer le choix du tissu, la confection et la livraison selon votre localisation.",
     hours: `Renseignements au ${BRAND.phones[0]}`,
   },
   {
-    name: "Livraison et expédition",
-    city: "Partout",
+    name: "Express 24h",
+    city: "Urgences de tenues",
     address:
-      "Commandes et renseignements par WhatsApp, avec livraison et expédition selon votre localisation.",
-    hours: "Suivi par appel ou WhatsApp",
+      "Confection possible en 24h selon le modèle, les matières disponibles et la charge de l'atelier.",
+    hours: "Validation par appel ou WhatsApp",
   },
 ];
 
@@ -62,7 +62,7 @@ function Stores() {
 
       <div className="mt-14 aspect-16/9 w-full overflow-hidden border border-border">
         <iframe
-          title="Carte de l'atelier Niss mode & couture à Fifadji"
+          title="Carte de l'atelier FA Creation à Cotonou"
           src={BRAND.mapsEmbed}
           loading="lazy"
           className="size-full"
@@ -80,3 +80,4 @@ function Stores() {
     </div>
   );
 }
+

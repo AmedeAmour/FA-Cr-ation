@@ -1,14 +1,15 @@
-# Niss mode & couture
+﻿# FA Creation
 
-Site e-commerce vitrine et commande WhatsApp pour Niss mode & couture, maison de couture et de mode située à Fifadji.
+Site e-commerce vitrine et commande WhatsApp pour FA Creation, atelier de couture sur mesure situé à Cotonou.
 
 ## Informations intégrées
 
-- Téléphone / WhatsApp : 01 96 65 27 27
-- WhatsApp international : +229 01 96 65 27 27
-- E-mail : venglele1402@gmail.com
-- Atelier : Fifadji, Cotonou
-- Services : nouvelle collection, couture express 24h selon modèle, robes, tenues événementielles, confection sur mesure, retouches urgentes, livraison et expédition partout.
+- Téléphone / WhatsApp : 01 40 36 78 18
+- WhatsApp international : +229 40 36 78 18
+- E-mail : facreation23@gmail.com
+- Atelier : Cotonou, Bénin
+- Signature : Votre style, notre savoir-faire.
+- Services : costumes sur mesure, chemises, pantalons, agbada, good luck, tenues modernes et traditionnelles, livraison 72h, express 24h selon modèle, choix du tissu et finitions impeccables.
 
 ## Développement
 

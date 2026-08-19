@@ -30,7 +30,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background">
       <div className="bg-primary py-2 text-center text-primary-foreground">
-        <p className="eyebrow px-4">Couture express 24h selon modèle - livraison et expédition partout</p>
+        <p className="eyebrow px-4">Livraison 72h - express 24h selon modèle - FA Creation, soyez chics</p>
       </div>
       <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-4 md:px-8">
         <button
@@ -45,7 +45,7 @@ export function Header() {
           <img
             src="/logo-header.png"
             alt={BRAND.name}
-            className="h-12 w-auto object-contain md:h-14"
+            className="h-12 w-auto object-contain md:h-16"
             width={860}
             height={420}
           />
@@ -119,3 +119,6 @@ export function Header() {
     </header>
   );
 }
+
+
+

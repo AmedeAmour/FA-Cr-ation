@@ -1,13 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { Facebook, Mail, MapPin, Phone } from "lucide-react";
 import { BRAND, wa } from "@/lib/brand";
 
-const TITLE = "Contact — Niss mode & couture";
+const TITLE = "Contact - FA Creation";
 const DESC =
-  "Contactez Niss mode & couture à Fifadji : téléphone, WhatsApp, email, Facebook, livraison et expédition partout.";
+  "Contactez FA Creation à Cotonou : téléphone, WhatsApp, email, Facebook, costumes et tenues sur mesure avec livraison 72h.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -58,7 +58,7 @@ function Contact() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
       <p className="eyebrow text-terracotta">Contact</p>
-      <h1 className="font-display mt-3 text-4xl md:text-5xl">Écrivez-nous</h1>
+      <h1 className="font-display mt-3 text-4xl md:text-5xl">Écrivez à FA Creation</h1>
       <div className="woven-rule my-8 w-32" />
 
       <div className="grid gap-14 lg:grid-cols-2">
@@ -158,13 +158,13 @@ function Contact() {
                 rel="noreferrer"
                 className="text-muted-foreground mt-1 block text-sm"
               >
-                Page Facebook Niss mode & couture
+                Page Facebook FA Creation
               </a>
             </div>
           </div>
           <div className="aspect-4/3 w-full overflow-hidden border border-border">
             <iframe
-              title="Carte de l'atelier Niss mode & couture"
+              title="Carte de l'atelier FA Creation à Cotonou"
               src={BRAND.mapsEmbed}
               loading="lazy"
               className="size-full"
@@ -175,3 +175,4 @@ function Contact() {
     </div>
   );
 }
+

@@ -6,16 +6,16 @@ import { BRAND, formatPrice, wa } from "@/lib/brand";
 export const Route = createFileRoute("/panier")({
   head: () => ({
     meta: [
-      { title: "Votre panier - Niss mode & couture" },
+      { title: "Votre panier - FA Creation" },
       {
         name: "description",
         content:
-          "Vérifiez vos pièces sélectionnées puis finalisez votre commande : livraison à Fifadji, retrait en boutique ou commande sur WhatsApp.",
+          "Vérifiez vos pièces sélectionnées puis finalisez votre commande : Livraison à Cotonou, retrait en boutique ou commande sur WhatsApp.",
       },
-      { property: "og:title", content: "Votre panier - Niss mode & couture" },
+      { property: "og:title", content: "Votre panier - FA Creation" },
       {
         property: "og:description",
-        content: "Finalisez votre commande Niss mode & couture.",
+        content: "Finalisez votre commande FA Creation.",
       },
       { property: "og:url", content: "/panier" },
       { name: "robots", content: "noindex" },
@@ -123,3 +123,6 @@ function Panier() {
     </div>
   );
 }
+
+
+

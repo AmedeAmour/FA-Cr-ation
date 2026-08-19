@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { categoriesQuery, colors, productsQuery, sizes, totalStock } from "@/lib/catalog";
@@ -10,9 +10,9 @@ type Search = {
   tri?: string;
 };
 
-const TITLE = "Boutique — Couture, sur mesure & collections | Niss mode & couture";
+const TITLE = "Boutique - Costumes et tenues sur mesure | FA Creation";
 const DESC =
-  "Parcourez la boutique en ligne : robes, ensembles, tenues hommes, modèles disponibles et créations sur mesure. Livraison à Fifadji et partout au Bénin.";
+  "Parcourez les créations FA Creation : costumes, chemises, pantalons, agbada, good luck, lin et pièces sur mesure avec livraison 72h.";
 
 export const Route = createFileRoute("/boutique")({
   validateSearch: (search: Record<string, unknown>): Search => {
@@ -105,7 +105,7 @@ function Boutique() {
                     },
                   })
                 }
-                placeholder="Robe, ensemble, express…"
+                placeholder="Costume, agbada, chemise..."
                 className="mt-2 w-full border-b border-border bg-transparent py-2 text-sm outline-none"
               />
             </div>
@@ -236,7 +236,7 @@ function Boutique() {
           </div>
 
           {isLoading ? (
-            <p className="text-muted-foreground py-16 text-sm">Chargement…</p>
+            <p className="text-muted-foreground py-16 text-sm">Chargement...</p>
           ) : filtered.length === 0 ? (
             <div className="py-16">
               <p className="text-muted-foreground text-sm">
@@ -258,5 +258,9 @@ function Boutique() {
     </div>
   );
 }
+
+
+
+
 
 

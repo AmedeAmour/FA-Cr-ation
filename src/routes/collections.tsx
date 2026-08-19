@@ -2,9 +2,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { categoriesQuery, primaryImage, productsQuery } from "@/lib/catalog";
 
-const TITLE = "Collections - Couture express, sur mesure & nouvelles pièces | Niss mode & couture";
+const TITLE = "Collections - Costumes, agbada & sur mesure | FA Creation";
 const DESC =
-  "Découvrez les collections de la Maison : nouvelles pièces, couture express, tenues événementielles, confection homme et dame, et créations sur mesure.";
+  "Découvrez les collections FA Creation : costumes, chemises, pantalons, agbada, good luck, couture express et créations sur mesure.";
 
 export const Route = createFileRoute("/collections")({
   head: () => ({
@@ -58,3 +58,7 @@ function Collections() {
     </div>
   );
 }
+
+
+
+

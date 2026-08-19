@@ -12,14 +12,14 @@ import { BRAND, formatPrice, wa } from "@/lib/brand";
 export const Route = createFileRoute("/commande")({
   head: () => ({
     meta: [
-      { title: "Finaliser la commande - Niss mode & couture" },
+      { title: "Finaliser la commande - FA Creation" },
       {
         name: "description",
         content:
           "Renseignez vos coordonnées de livraison et choisissez votre mode de règlement : Mobile Money, virement ou paiement en boutique.",
       },
-      { property: "og:title", content: "Finaliser la commande - Niss mode & couture" },
-      { property: "og:description", content: "Commande Niss mode & couture." },
+      { property: "og:title", content: "Finaliser la commande - FA Creation" },
+      { property: "og:description", content: "Commande FA Creation." },
       { property: "og:url", content: "/commande" },
       { name: "robots", content: "noindex" },
     ],
@@ -39,7 +39,7 @@ const schema = z.object({
 const PAYMENTS = [
   { id: "mobile_money", label: "Mobile Money (Orange, MTN, Moov, Wave)" },
   { id: "bank_transfer", label: "Virement bancaire" },
-  { id: "in_store", label: "Paiement en boutique / à la livraison" },
+  { id: "in_store", label: "Paiement à la livraison / à l'atelier" },
 ];
 
 function Checkout() {
@@ -291,3 +291,6 @@ function Checkout() {
     </div>
   );
 }
+
+
+

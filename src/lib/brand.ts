@@ -1,19 +1,20 @@
-export const BRAND = {
-  name: "Niss mode & couture",
-  shortName: "Niss",
-  tagline: "Maison de couture et de mode à Fifadji.",
-  site: "Page Facebook Niss mode & couture",
-  facebook: "https://web.facebook.com/search/top?q=Niss%20mode%20%26%20couture",
-  email: "venglele1402@gmail.com",
-  phones: ["01 96 65 27 27"],
-  whatsapp: "2290196652727",
-  whatsappUrl: "https://wa.me/2290196652727",
-  maps: "https://www.google.com/maps/search/?api=1&query=Fifadji%2C%20Cotonou%2C%20B%C3%A9nin",
-  mapsEmbed: "https://www.google.com/maps?q=Fifadji%2C%20Cotonou%2C%20B%C3%A9nin&output=embed",
+﻿export const BRAND = {
+  name: "FA Creation",
+  displayName: "FA Création",
+  shortName: "FA",
+  tagline: "Votre style, notre savoir-faire.",
+  site: "Page Facebook FA Creation",
+  facebook: "https://web.facebook.com/search/top?q=FA%20Creation",
+  email: "facreation23@gmail.com",
+  phones: ["01 40 36 78 18"],
+  whatsapp: "22940367818",
+  whatsappUrl: "https://wa.me/22940367818",
+  maps: "https://www.google.com/maps/search/?api=1&query=Cotonou%2C%20B%C3%A9nin",
+  mapsEmbed: "https://www.google.com/maps?q=Cotonou%2C%20B%C3%A9nin&output=embed",
   boutique: {
-    label: "Fifadji, Cotonou",
+    label: "Cotonou, Bénin",
     address:
-      "Atelier Niss mode & couture, Fifadji, Cotonou. Livraison et expédition partout.",
+      "Atelier FA Creation, Cotonou. Confection sur mesure, livraison en 72h et express 24h selon le modèle.",
   },
 } as const;
 
@@ -32,3 +33,4 @@ export function formatPrice(price?: number | null) {
   if (price == null) return "Sur devis";
   return `${new Intl.NumberFormat("fr-FR").format(price)} FCFA`;
 }
+
