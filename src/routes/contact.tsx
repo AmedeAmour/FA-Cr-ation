@@ -2,12 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
-import { Facebook, MapPin, Phone } from "lucide-react";
+import { Facebook, Mail, MapPin, Phone } from "lucide-react";
 import { BRAND, wa } from "@/lib/brand";
 
-const TITLE = "Contact — Abikè, Abomey-Calavi";
+const TITLE = "Contact — Niss mode & couture";
 const DESC =
-  "Contactez Abikè : WhatsApp, téléphone, Facebook et adresse de la maison de mode à Abomey-Calavi.";
+  "Contactez Niss mode & couture à Fifadji : téléphone, WhatsApp, email, Facebook, livraison et expédition partout.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -114,7 +114,7 @@ function Contact() {
             />
           </div>
           <button type="submit" className="eyebrow bg-primary text-primary-foreground px-8 py-4">
-            Envoyer
+            Envoyer sur WhatsApp
           </button>
         </form>
 
@@ -122,7 +122,7 @@ function Contact() {
           <div className="flex gap-4">
             <MapPin className="text-terracotta mt-1 size-5 shrink-0" />
             <div>
-              <p className="eyebrow">Boutique</p>
+              <p className="eyebrow">Atelier</p>
               <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
                 {BRAND.boutique.address}
               </p>
@@ -131,12 +131,21 @@ function Contact() {
           <div className="flex gap-4">
             <Phone className="text-terracotta mt-1 size-5 shrink-0" />
             <div>
-              <p className="eyebrow">Téléphone</p>
+              <p className="eyebrow">Téléphone / WhatsApp</p>
               {BRAND.phones.map((p) => (
                 <p key={p} className="text-muted-foreground mt-1 text-sm">
                   {p}
                 </p>
               ))}
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <Mail className="text-terracotta mt-1 size-5 shrink-0" />
+            <div>
+              <p className="eyebrow">E-mail</p>
+              <a href={`mailto:${BRAND.email}`} className="text-muted-foreground mt-1 block text-sm">
+                {BRAND.email}
+              </a>
             </div>
           </div>
           <div className="flex gap-4">
@@ -149,13 +158,13 @@ function Contact() {
                 rel="noreferrer"
                 className="text-muted-foreground mt-1 block text-sm"
               >
-                Page Facebook Abikè
+                Page Facebook Niss mode & couture
               </a>
             </div>
           </div>
           <div className="aspect-4/3 w-full overflow-hidden border border-border">
             <iframe
-              title="Carte de la boutique Abikè"
+              title="Carte de l'atelier Niss mode & couture"
               src={BRAND.mapsEmbed}
               loading="lazy"
               className="size-full"

@@ -6,9 +6,9 @@ import { BRAND } from "@/lib/brand";
 import { categoriesQuery, productsQuery } from "@/lib/catalog";
 import { ProductCard } from "@/components/site/ProductCard";
 
-const TITLE = "Abikè — Pagne tissé, batik & teinture artisanale à Abomey-Calavi";
+const TITLE = "Niss mode & couture — Confection sur mesure à Fifadji";
 const DESC =
-  "Maison de mode béninoise spécialisée en pagne tissé, batik et teinture artisanale pour femme et homme. Découvrez les collections et commandez en ligne ou sur WhatsApp.";
+  "Maison de couture et de mode à Fifadji : nouvelles collections, couture express en 24h, robes, tenues événementielles, livraison et expédition partout.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "pagne tissé Abomey-Calavi, vêtements en pagne tissé Bénin, chemises en coton Abomey-Calavi, maison de mode artisanale Bénin, créations en batik Abomey-Calavi, mode durable Bénin, artisanat textile béninois, Abikè",
+          "Niss mode couture, couture Fifadji, couture express Cotonou, robe sur mesure Bénin, maison de couture Cotonou, confection dame, tenue événementielle, livraison couture Bénin",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -40,20 +40,20 @@ function Index() {
       <section className="relative">
         <div className="relative grid min-h-[86vh] items-center md:grid-cols-2">
           <div className="order-2 px-6 py-16 md:order-1 md:px-16">
-            <p className="eyebrow text-terracotta">Artisanat d'exception — Abomey-Calavi</p>
+            <p className="eyebrow text-terracotta">Maison de couture — Fifadji</p>
             <h1 className="font-display mt-6 text-5xl leading-[1.05] md:text-7xl">
-              Le pagne tissé
+              Niss mode
               <br />
-              autrement.
+              & couture.
             </h1>
             <div className="woven-rule my-8 w-32" />
             <p className="text-muted-foreground max-w-lg text-base leading-relaxed">
-              Chaque fil est traçable, teinté naturellement, et tissé selon des pratiques durables
-              qui soutiennent un artisanat local équitable, porté en grande partie par des femmes.
+              Confiez-nous vos projets de confection pour tout événement. L'atelier réalise vos
+              tenues sur mesure, propose une couture express en 24h selon modèle, et expédie partout.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link to="/boutique" className="eyebrow bg-primary text-primary-foreground px-8 py-4">
-                Découvrir la collection
+                Découvrir les créations
               </Link>
               <a
                 href={BRAND.whatsappUrl}
@@ -68,7 +68,7 @@ function Index() {
           <div className="order-1 h-[60vh] md:order-2 md:h-[86vh]">
             <img
               src={heroImage}
-              alt="Robe longue en pagne tissé, Abikè"
+              alt="Création de mode Niss mode & couture"
               width={1600}
               height={1920}
               className="size-full object-cover"
@@ -81,7 +81,7 @@ function Index() {
         <div className="flex items-end justify-between">
           <div>
             <p className="eyebrow text-terracotta">Collections</p>
-            <h2 className="font-display mt-3 text-3xl md:text-4xl">Nos univers</h2>
+            <h2 className="font-display mt-3 text-3xl md:text-4xl">Nos services couture</h2>
           </div>
           <Link to="/collections" className="eyebrow underline underline-offset-4">
             Tout voir
@@ -105,8 +105,8 @@ function Index() {
 
       <section className="bg-sand py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <p className="eyebrow text-terracotta">Pièces signatures</p>
-          <h2 className="font-display mt-3 text-3xl md:text-4xl">Mises en avant</h2>
+          <p className="eyebrow text-terracotta">Nouveautés</p>
+          <h2 className="font-display mt-3 text-3xl md:text-4xl">Disponibles et sur commande</h2>
           <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {showcase.map((p) => (
               <ProductCard key={p.id} product={p} />
@@ -115,10 +115,36 @@ function Index() {
         </div>
       </section>
 
+      <section className="bg-primary text-primary-foreground py-20">
+        <div className="mx-auto max-w-3xl px-4 text-center">
+          <p className="eyebrow text-gold">Urgence couture</p>
+          <h2 className="font-display mt-4 text-3xl md:text-4xl">
+            Une tenue urgente ? Contactez l'atelier
+          </h2>
+          <p className="text-primary-foreground/70 mx-auto mt-5 max-w-xl leading-relaxed">
+            La couture express peut être réalisée en 24h selon le modèle, la matière et la charge de
+            l'atelier. Envoyez votre demande au {BRAND.phones[0]}.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <a
+              href={`${BRAND.whatsappUrl}?text=${encodeURIComponent("Bonjour Niss mode & couture, j'ai une urgence de tenue et je souhaite vérifier la possibilité d'une confection en 24h.")}`}
+              target="_blank"
+              rel="noreferrer"
+              className="eyebrow bg-gold text-gold-foreground px-8 py-4"
+            >
+              Demander en urgence
+            </a>
+            <Link to="/contact" className="eyebrow border border-primary-foreground/40 px-8 py-4">
+              Demander des informations
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-24 md:grid-cols-2 md:px-8">
         <img
           src={atelierImage}
-          alt="Tissage artisanal du pagne sur métier traditionnel"
+          alt="Atelier de couture et confection sur mesure"
           loading="lazy"
           width={1600}
           height={1104}
@@ -126,42 +152,16 @@ function Index() {
         />
         <div>
           <p className="eyebrow text-terracotta">Savoir-faire</p>
-          <h2 className="font-display mt-3 text-3xl md:text-4xl">Un fil, une main, une histoire</h2>
+          <h2 className="font-display mt-3 text-3xl md:text-4xl">Une tenue pensée pour vous</h2>
           <div className="hairline my-6 w-24" />
           <p className="text-muted-foreground leading-relaxed">
-            Nous choisissons des matières nobles — pagne tissé, batik, teinture artisanale — et
-            travaillons avec des artisans dont le geste se transmet. Les teintures sont naturelles,
-            les finitions faites à la main, et chaque pièce se porte longtemps.
+            Du choix du modèle à la finition, Niss mode & couture vous accompagne pour créer une
+            pièce élégante, bien ajustée et adaptée à votre événement. Appelez ou écrivez sur
+            WhatsApp pour vérifier les disponibilités.
           </p>
           <Link to="/a-propos" className="eyebrow mt-8 inline-block underline underline-offset-4">
             La Maison
           </Link>
-        </div>
-      </section>
-
-      <section className="bg-primary text-primary-foreground py-20">
-        <div className="mx-auto max-w-3xl px-4 text-center">
-          <p className="eyebrow text-gold">Sur mesure</p>
-          <h2 className="font-display mt-4 text-3xl md:text-4xl">
-            Nous dessinons votre pièce avec vous
-          </h2>
-          <p className="text-primary-foreground/70 mx-auto mt-5 max-w-xl leading-relaxed">
-            Du choix du fil aux finitions, nos conseillers vous accompagnent. Prenez rendez-vous à
-            la boutique d'Abomey-Calavi ou échangez avec nous sur WhatsApp.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a
-              href={`${BRAND.whatsappUrl}?text=${encodeURIComponent("Bonjour Abikè, je souhaite prendre rendez-vous pour une pièce sur mesure.")}`}
-              target="_blank"
-              rel="noreferrer"
-              className="eyebrow bg-gold text-gold-foreground px-8 py-4"
-            >
-              Prendre rendez-vous
-            </a>
-            <Link to="/contact" className="eyebrow border border-primary-foreground/40 px-8 py-4">
-              Demander des informations
-            </Link>
-          </div>
         </div>
       </section>
     </>

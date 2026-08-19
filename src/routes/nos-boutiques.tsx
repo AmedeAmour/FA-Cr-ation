@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BRAND } from "@/lib/brand";
 
-const TITLE = "Nos boutiques au Bénin — Abikè";
+const TITLE = "Atelier à Fifadji — Niss mode & couture";
 const DESC =
-  "Retrouvez Abikè à Abomey-Calavi et au centre de la coopérative à Parakou. Horaires, adresses et itinéraire.";
+  "Retrouvez Niss mode & couture à Fifadji. Confection sur mesure, couture express, nouvelles collections, livraison et expédition partout.";
 
 export const Route = createFileRoute("/nos-boutiques")({
   head: () => ({
@@ -21,31 +21,32 @@ export const Route = createFileRoute("/nos-boutiques")({
 
 const STORES = [
   {
-    name: "Boutique Abomey-Calavi",
-    city: "Abomey-Calavi, Bénin",
+    name: "Atelier Niss mode & couture",
+    city: "Fifadji, Cotonou",
     address: BRAND.boutique.address,
-    hours: "Lundi – Samedi, 9h – 19h",
+    hours: "Contactez l'atelier par appel ou WhatsApp avant votre passage",
   },
   {
-    name: "Coopérative Abikè",
-    city: "Parakou, Bénin",
-    address: "Centre de la coopérative Abikè, Parakou, Bénin.",
-    hours: "Lundi – Samedi, 10h – 18h",
-  },
-  {
-    name: "Livraison nationale",
-    city: "Partout au Bénin",
+    name: "Couture express",
+    city: "Urgences de tenues",
     address:
-      "Commandes et renseignements par WhatsApp, avec livraison disponible partout au Bénin.",
-    hours: "Renseignements aux heures d'ouverture",
+      "Confection possible en 24h selon le modèle, les matières disponibles et la charge de l'atelier.",
+    hours: `Renseignements au ${BRAND.phones[0]}`,
+  },
+  {
+    name: "Livraison et expédition",
+    city: "Partout",
+    address:
+      "Commandes et renseignements par WhatsApp, avec livraison et expédition selon votre localisation.",
+    hours: "Suivi par appel ou WhatsApp",
   },
 ];
 
 function Stores() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
-      <p className="eyebrow text-terracotta">Points de vente</p>
-      <h1 className="font-display mt-3 text-4xl md:text-5xl">Nos boutiques</h1>
+      <p className="eyebrow text-terracotta">Atelier</p>
+      <h1 className="font-display mt-3 text-4xl md:text-5xl">Nous trouver</h1>
       <div className="woven-rule my-8 w-32" />
 
       <div className="grid gap-10 md:grid-cols-3">
@@ -61,7 +62,7 @@ function Stores() {
 
       <div className="mt-14 aspect-16/9 w-full overflow-hidden border border-border">
         <iframe
-          title="Carte de la boutique Abikè à Abomey-Calavi"
+          title="Carte de l'atelier Niss mode & couture à Fifadji"
           src={BRAND.mapsEmbed}
           loading="lazy"
           className="size-full"

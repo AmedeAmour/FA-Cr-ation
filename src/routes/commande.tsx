@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { z } from "zod";
@@ -12,14 +12,14 @@ import { BRAND, formatPrice, wa } from "@/lib/brand";
 export const Route = createFileRoute("/commande")({
   head: () => ({
     meta: [
-      { title: "Finaliser la commande — Abikè" },
+      { title: "Finaliser la commande - Niss mode & couture" },
       {
         name: "description",
         content:
           "Renseignez vos coordonnées de livraison et choisissez votre mode de règlement : Mobile Money, virement ou paiement en boutique.",
       },
-      { property: "og:title", content: "Finaliser la commande — Abikè" },
-      { property: "og:description", content: "Commande Abikè." },
+      { property: "og:title", content: "Finaliser la commande - Niss mode & couture" },
+      { property: "og:description", content: "Commande Niss mode & couture." },
       { property: "og:url", content: "/commande" },
       { name: "robots", content: "noindex" },
     ],
@@ -119,7 +119,7 @@ function Checkout() {
       `Bonjour ${BRAND.name}, je viens de passer une commande.\n` +
         `Nom : ${d.full_name}\nTéléphone : ${d.phone}\nAdresse : ${d.address}\n` +
         `Livraison : ${zone?.name ?? "à préciser"}\nRèglement : ${PAYMENTS.find((p) => p.id === payment)?.label}\n\n` +
-        lines.map((l) => `• ${l.name} — taille ${l.size} × ${l.quantity}`).join("\n") +
+        lines.map((l) => `• ${l.name} - taille ${l.size} × ${l.quantity}`).join("\n") +
         `\n\nTotal : ${total > 0 ? formatPrice(total) : "sur devis"}`,
     );
 
@@ -209,7 +209,7 @@ function Checkout() {
                 <option value="">À préciser avec un conseiller</option>
                 {(zones as { id: string; name: string; fee_xof: number }[]).map((z) => (
                   <option key={z.id} value={z.id}>
-                    {z.name} — {formatPrice(z.fee_xof)}
+                    {z.name} - {formatPrice(z.fee_xof)}
                   </option>
                 ))}
               </select>

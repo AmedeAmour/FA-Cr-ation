@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { Trash2 } from "lucide-react";
 import { useCart } from "@/lib/cart";
 import { BRAND, formatPrice, wa } from "@/lib/brand";
@@ -6,16 +6,16 @@ import { BRAND, formatPrice, wa } from "@/lib/brand";
 export const Route = createFileRoute("/panier")({
   head: () => ({
     meta: [
-      { title: "Votre panier — Abikè" },
+      { title: "Votre panier - Niss mode & couture" },
       {
         name: "description",
         content:
-          "Vérifiez vos pièces sélectionnées puis finalisez votre commande : livraison à Abomey-Calavi, retrait en boutique ou commande sur WhatsApp.",
+          "Vérifiez vos pièces sélectionnées puis finalisez votre commande : livraison à Fifadji, retrait en boutique ou commande sur WhatsApp.",
       },
-      { property: "og:title", content: "Votre panier — Abikè" },
+      { property: "og:title", content: "Votre panier - Niss mode & couture" },
       {
         property: "og:description",
-        content: "Finalisez votre commande Abikè.",
+        content: "Finalisez votre commande Niss mode & couture.",
       },
       { property: "og:url", content: "/panier" },
       { name: "robots", content: "noindex" },
@@ -30,7 +30,7 @@ function Panier() {
 
   const waMessage = wa(
     `Bonjour ${BRAND.name}, je souhaite commander :\n` +
-      lines.map((l) => `• ${l.name} — taille ${l.size} × ${l.quantity}`).join("\n"),
+      lines.map((l) => `• ${l.name} - taille ${l.size} × ${l.quantity}`).join("\n"),
   );
 
   return (
@@ -66,7 +66,7 @@ function Panier() {
                   <h2 className="font-display text-lg">{l.name}</h2>
                   <p className="text-muted-foreground mt-1 text-xs">
                     Taille {l.size}
-                    {l.color ? ` — ${l.color}` : ""}
+                    {l.color ? ` - ${l.color}` : ""}
                   </p>
                   <p className="mt-2 text-sm">{formatPrice(l.price)}</p>
                   <div className="mt-3 flex items-center gap-4">

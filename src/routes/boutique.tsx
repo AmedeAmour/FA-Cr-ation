@@ -10,9 +10,9 @@ type Search = {
   tri?: string;
 };
 
-const TITLE = "Boutique — Pagne tissé, batik & teinture artisanale | Abikè";
+const TITLE = "Boutique — Couture, sur mesure & collections | Niss mode & couture";
 const DESC =
-  "Parcourez la boutique en ligne : robes, tuniques, chemises en coton, tenues hommes et ensembles en pagne tissé et batik. Livraison à Abomey-Calavi et partout au Bénin.";
+  "Parcourez la boutique en ligne : robes, ensembles, tenues hommes, modèles disponibles et créations sur mesure. Livraison à Fifadji et partout au Bénin.";
 
 export const Route = createFileRoute("/boutique")({
   validateSearch: (search: Record<string, unknown>): Search => {
@@ -105,7 +105,7 @@ function Boutique() {
                     },
                   })
                 }
-                placeholder="Robe, batik, teinture artisanale…"
+                placeholder="Robe, ensemble, express…"
                 className="mt-2 w-full border-b border-border bg-transparent py-2 text-sm outline-none"
               />
             </div>
@@ -258,3 +258,5 @@ function Boutique() {
     </div>
   );
 }
+
+

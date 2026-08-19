@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "@tanstack/react-router";
+﻿import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, Search, ShoppingBag, User, X } from "lucide-react";
 import { BRAND } from "@/lib/brand";
@@ -10,7 +10,7 @@ const NAV = [
   { to: "/boutique", label: "Boutique" },
   { to: "/collections", label: "Collections" },
   { to: "/a-propos", label: "La Maison" },
-  { to: "/nos-boutiques", label: "Nos boutiques" },
+  { to: "/nos-boutiques", label: "Atelier" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -30,7 +30,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background">
       <div className="bg-primary py-2 text-center text-primary-foreground">
-        <p className="eyebrow px-4">{BRAND.tagline}</p>
+        <p className="eyebrow px-4">Couture express 24h selon modèle - livraison et expédition partout</p>
       </div>
       <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-4 md:px-8">
         <button
@@ -41,16 +41,14 @@ export function Header() {
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
 
-        <Link to="/" className="mr-auto flex items-center gap-3 md:mr-0">
-          <img src="/logo-accueil.png" alt="Logo" className="h-12 w-auto object-contain" />
-          <div>
-            <span className="font-display block text-lg leading-none tracking-[0.16em] uppercase md:text-xl">
-              Maison
-            </span>
-            <span className="font-display block text-lg leading-none tracking-[0.16em] uppercase md:text-xl">
-              Abikè
-            </span>
-          </div>
+        <Link to="/" className="mr-auto flex items-center md:mr-0" aria-label={BRAND.name}>
+          <img
+            src="/logo-header.png"
+            alt={BRAND.name}
+            className="h-12 w-auto object-contain md:h-14"
+            width={860}
+            height={420}
+          />
         </Link>
 
         <nav className="mx-auto hidden items-center gap-8 md:flex">
@@ -74,7 +72,7 @@ export function Header() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Rechercher"
               className="w-28 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
-              aria-label="Rechercher un vêtement"
+              aria-label="Rechercher une création"
             />
           </label>
         </form>
@@ -100,7 +98,7 @@ export function Header() {
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Rechercher un vêtement"
+              placeholder="Rechercher une création"
               className="w-full border-b border-border bg-transparent py-2 text-sm outline-none"
             />
           </form>

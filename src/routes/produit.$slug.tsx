@@ -20,19 +20,19 @@ import { ProductCard } from "@/components/site/ProductCard";
 
 export const Route = createFileRoute("/produit/$slug")({
   head: ({ params }) => {
-    const title = `${params.slug.replace(/-/g, " ")} — Abikè`;
+    const title = `${params.slug.replace(/-/g, " ")} — Niss mode & couture`;
     return {
       meta: [
         { title },
         {
           name: "description",
           content:
-            "Pièce artisanale en pagne tissé, batik ou tissu teint artisanal. Tailles, matière, entretien et commande en ligne ou sur WhatsApp.",
+            "Création de couture sur mesure ou modèle disponible. Tailles, matières, entretien et commande en ligne ou sur WhatsApp.",
         },
         { property: "og:title", content: title },
         {
           property: "og:description",
-          content: "Création artisanale Abikè, Abomey-Calavi.",
+          content: "Création artisanale Niss mode & couture, Fifadji.",
         },
         { property: "og:type", content: "product" },
         { property: "og:url", content: `/produit/${params.slug}` },
@@ -217,7 +217,7 @@ function ProductPage() {
           </div>
           <a
             href={wa(
-              `Bonjour Abikè, pouvez-vous vérifier la disponibilité du modèle ${product.name} ?`,
+              `Bonjour Niss mode & couture, pouvez-vous vérifier la disponibilité du modèle ${product.name} ?`,
             )}
             target="_blank"
             rel="noreferrer"
@@ -303,3 +303,5 @@ function ProductPage() {
     </div>
   );
 }
+
+

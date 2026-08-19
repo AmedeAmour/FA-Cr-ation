@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { Heart, ShoppingBag } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
@@ -64,7 +64,7 @@ export function ProductCard({ product }: { product: Product }) {
         />
         <img
           src={secondaryImage(product)}
-          alt={`${product.name} – détail`}
+          alt={`${product.name} - détail`}
           loading="lazy"
           width={1024}
           height={1280}
@@ -111,7 +111,7 @@ export function ProductCard({ product }: { product: Product }) {
         </p>
         <p className="text-muted-foreground mt-2 text-xs">
           {productSizes.join(" · ")}
-          {productColors.length > 0 && ` — ${productColors.join(", ")}`}
+          {productColors.length > 0 && ` - ${productColors.join(", ")}`}
         </p>
         <p className="text-muted-foreground mt-1 text-xs">
           {product.is_made_to_measure
@@ -133,7 +133,7 @@ export function ProductCard({ product }: { product: Product }) {
             target="_blank"
             rel="noreferrer"
             className="eyebrow border border-primary px-3 py-2"
-            title={`Commander sur WhatsApp – ${BRAND.name}`}
+            title={`Commander sur WhatsApp - ${BRAND.name}`}
           >
             WhatsApp
           </a>

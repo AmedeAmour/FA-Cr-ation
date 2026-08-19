@@ -1,10 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { categoriesQuery, primaryImage, productsQuery } from "@/lib/catalog";
 
-const TITLE = "Collections — Pagnes tissés, batik & créations sur mesure | Abikè";
+const TITLE = "Collections - Couture express, sur mesure & nouvelles pièces | Niss mode & couture";
 const DESC =
-  "Découvrez les collections de la Maison : pagnes tissés, batiks, tissus teints artisanalement, tenues hommes, ensembles, accessoires et pièces sur mesure.";
+  "Découvrez les collections de la Maison : nouvelles pièces, couture express, tenues événementielles, confection homme et dame, et créations sur mesure.";
 
 export const Route = createFileRoute("/collections")({
   head: () => ({

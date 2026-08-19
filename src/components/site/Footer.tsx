@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { BRAND } from "@/lib/brand";
 
 export function Footer() {
@@ -6,14 +6,15 @@ export function Footer() {
     <footer className="bg-primary text-primary-foreground mt-24">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 md:grid-cols-4 md:px-8">
         <div>
-          <div className="flex items-center gap-3">
-            <img src="/logo-pied-de-page.png" alt="Logo" className="h-12 w-auto object-contain" />
-            <p className="font-display text-xl tracking-[0.14em] uppercase">
-              Maison
-              <br />
-              Abikè
-            </p>
-          </div>
+          <Link to="/" className="inline-flex" aria-label={BRAND.name}>
+            <img
+              src="/logo-footer.png"
+              alt={BRAND.name}
+              className="h-16 w-auto object-contain"
+              width={860}
+              height={420}
+            />
+          </Link>
           <div className="woven-rule my-5 w-24" />
           <p className="text-primary-foreground/70 text-sm leading-relaxed">{BRAND.tagline}</p>
         </div>
@@ -31,7 +32,7 @@ export function Footer() {
               <Link to="/a-propos">La Maison</Link>
             </li>
             <li>
-              <Link to="/nos-boutiques">Nos boutiques</Link>
+              <Link to="/nos-boutiques">Atelier</Link>
             </li>
             <li>
               <Link to="/contact">Contact</Link>
@@ -48,6 +49,9 @@ export function Footer() {
               </li>
             ))}
             <li>
+              <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a>
+            </li>
+            <li>
               <a href={BRAND.whatsappUrl} target="_blank" rel="noreferrer">
                 Commander sur WhatsApp
               </a>
@@ -62,7 +66,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="eyebrow text-gold">Notre boutique</p>
+          <p className="eyebrow text-gold">Notre atelier</p>
           <p className="mt-4 text-sm leading-relaxed text-primary-foreground/75">
             {BRAND.boutique.label}
             <br />
@@ -80,7 +84,7 @@ export function Footer() {
       </div>
       <div className="border-t border-primary-foreground/15 py-6 text-center">
         <p className="text-primary-foreground/50 text-xs">
-          © {new Date().getFullYear()} {BRAND.name}. Artisanat textile béninois.
+          © {new Date().getFullYear()} {BRAND.name}. Maison de couture et de mode.
         </p>
       </div>
     </footer>
